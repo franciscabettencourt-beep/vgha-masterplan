@@ -3,288 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vilalara — Marketing-Led Growth Plan 2026–2031</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<title>Vilalara — Growth Marketing Plan 2026–2031</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;1,400;1,500&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
+/* ─── BRAND TOKENS — Manual de Normas ──────────────────────────────── */
 :root{
-  --g:#B09050;--gl:#CDB070;--gd:#806820;
-  --gf:rgba(176,144,80,.08);--gsm:rgba(176,144,80,.18);--gmd:rgba(176,144,80,.32);
-  --ink:#0C0B08;--i7:rgba(12,11,8,.72);--i4:rgba(12,11,8,.44);--i15:rgba(12,11,8,.11);
-  --cr:#F8F5EC;--c2:#EDE7D5;--c3:#E0D7C0;--sand:#D4C9A8;
-  --dk:#100F0A;--dk2:#181510;--dk3:#201C12;
-  --rd:#7A1E10;--rf:rgba(122,30,16,.08);--rb:rgba(122,30,16,.22);
-  --gn:#1A4A2E;--nf:rgba(26,74,46,.08);--nb:rgba(26,74,46,.20);
-  --ff:'Cormorant Garamond',Georgia,serif;
-  --fs:'DM Sans',system-ui,sans-serif;
+  --T:#453519;   /* Tierra  Pantone 476U */
+  --T2:#5C4A28;  /* Tierra light */
+  --T3:#2E2210;  /* Tierra dark */
+  --T4:#1C1508;  /* Tierra darker */
+  --H:#E3DECF;   /* Hueso   Pantone 7527U */
+  --H2:#D4CCBA;
+  --W:#FCFBF8;   /* Branco */
+  --gold-text:#8A7040;
+  --gold-dim:rgba(69,53,25,.42);
+  --gold-xs:rgba(69,53,25,.06);
+  --gold-sm:rgba(69,53,25,.14);
+  --gold-md:rgba(69,53,25,.28);
+  --i4:rgba(69,53,25,.44);
+  --i15:rgba(69,53,25,.11);
+  --rd:#7A2018;--rdf:rgba(122,32,24,.08);--rdb:rgba(122,32,24,.22);
+  --gn:#1A4A2E;--gnf:rgba(26,74,46,.08);--gnb:rgba(26,74,46,.20);
+  --ff:'Cinzel',Optima,'Trebuchet MS',sans-serif;        /* Optima Nova → Cinzel */
+  --fi:'EB Garamond',Garamond,Georgia,serif;             /* Millionaire → EB Garamond italic */
+  --fb:'DM Sans','Gill Sans MT','Gill Sans',system-ui,sans-serif; /* Gill Sans → DM Sans */
   --ez:cubic-bezier(.25,.46,.45,.94)
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--fs);background:var(--cr);color:var(--ink);line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--dk2)}::-webkit-scrollbar-thumb{background:var(--g);border-radius:2px}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--W);color:var(--T);line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--H)}::-webkit-scrollbar-thumb{background:var(--T2);border-radius:2px}
 
-/* LOADER */
-#ld{position:fixed;inset:0;background:var(--dk);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s var(--ez)}
+/* ─── LOADER ─────────────────────────────────────────────────────────── */
+#ld{position:fixed;inset:0;background:var(--T4);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .65s var(--ez)}
 #ld.out{opacity:0;pointer-events:none}
-.lv{font-family:var(--ff);font-size:96px;font-weight:300;color:var(--g);letter-spacing:.04em;opacity:0;transform:translateY(18px);animation:fu .8s var(--ez) .3s forwards}
-.lx{font-size:9.5px;font-weight:300;letter-spacing:.34em;text-transform:uppercase;color:rgba(176,144,80,.5);margin-top:10px;opacity:0;animation:fu .8s var(--ez) .9s forwards}
-.ll{width:64px;height:1px;background:var(--g);margin:14px auto 0;transform:scaleX(0);transform-origin:left;animation:li 1s var(--ez) 1.4s forwards}
+.lv{font-family:var(--ff);font-size:88px;font-weight:300;color:var(--H);letter-spacing:.06em;opacity:0;transform:translateY(18px);animation:fu .8s var(--ez) .3s forwards}
+.lsub{font-size:9px;font-weight:300;letter-spacing:.38em;text-transform:uppercase;color:rgba(227,222,207,.4);margin-top:12px;opacity:0;animation:fu .8s var(--ez) .9s forwards}
+.lline{width:60px;height:1px;background:var(--H2);margin:16px auto 0;transform:scaleX(0);transform-origin:left;animation:li .9s var(--ez) 1.4s forwards}
 @keyframes fu{to{opacity:1;transform:translateY(0)}}
 @keyframes li{to{transform:scaleX(1)}}
 
-/* NAV */
-#nav{position:fixed;top:0;left:0;right:0;z-index:200;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(16,15,10,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--gsm);transform:translateY(-100%);animation:ni .4s var(--ez) 2s forwards}
-@keyframes ni{to{transform:translateY(0)}}
-.nbr{font-family:var(--ff);font-size:18px;font-weight:400;letter-spacing:.06em;color:#fff}.nbr em{color:var(--g);font-style:normal}
-.nls{display:flex;overflow-x:auto;gap:0}.nls::-webkit-scrollbar{display:none}
-.nbt{padding:5px 11px;font-size:9.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s;white-space:nowrap}
-.nbt:hover{color:rgba(255,255,255,.72)}.nbt.on{color:var(--gl);border-bottom-color:var(--g);font-weight:500}
-.nyr{font-size:9px;font-weight:300;letter-spacing:.18em;color:rgba(255,255,255,.28)}
+/* ─── NAV ────────────────────────────────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;
+  background:rgba(28,21,8,.0);
+  backdrop-filter:blur(0px);
+  border-bottom:1px solid transparent;
+  transform:translateY(-100%);
+  animation:slideDown .45s var(--ez) 2s forwards;
+  transition:background .35s,backdrop-filter .35s,border-color .35s,height .3s
+}
+#nav.solid{
+  background:rgba(28,21,8,.97);
+  backdrop-filter:blur(22px);
+  border-bottom-color:rgba(92,74,40,.28);
+  height:52px
+}
+@keyframes slideDown{to{transform:translateY(0)}}
 
-/* APP */
-#app{padding-top:50px}
+.nbrand{
+  font-family:var(--ff);font-size:13px;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--H);
+  white-space:nowrap;flex-shrink:0;cursor:pointer
+}
+.nbrand span{color:var(--H2);font-style:italic;font-family:var(--fi)}
+
+/* Desktop links */
+.nlinks{display:flex;gap:0;overflow:hidden}
+.nbt{
+  padding:5px 10px;font-size:9px;font-weight:400;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(227,222,207,.38);
+  border:none;background:none;cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:color .15s;white-space:nowrap
+}
+.nbt:hover{color:rgba(227,222,207,.78)}
+.nbt.on{color:var(--H);border-bottom-color:var(--H2);font-weight:500}
+
+/* Hamburger */
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.ham span{width:22px;height:1.5px;background:var(--H);border-radius:1px;transition:all .25s var(--ez);display:block}
+.ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* Mobile drawer */
+#drawer{
+  position:fixed;top:52px;left:0;right:0;z-index:499;
+  background:rgba(28,21,8,.98);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(92,74,40,.3);
+  padding:0;max-height:0;overflow:hidden;
+  transition:max-height .35s var(--ez),padding .35s
+}
+#drawer.open{max-height:520px;padding:12px 0 16px}
+.dbt{
+  display:block;width:100%;text-align:left;
+  padding:11px 28px;font-size:10px;font-weight:400;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(227,222,207,.45);background:none;border:none;cursor:pointer;
+  transition:color .15s
+}
+.dbt:hover{color:var(--H)}
+.dbt.on{color:var(--H);font-weight:500}
+
+/* Nyr */
+.nyr{font-size:8.5px;font-weight:300;letter-spacing:.18em;color:rgba(227,222,207,.28);white-space:nowrap;flex-shrink:0}
+
+/* ─── APP ─────────────────────────────────────────────────────────────── */
+#app{padding-top:58px}
 .pg{display:none;animation:pi .32s var(--ez)}.pg.on{display:block}
 @keyframes pi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* HERO */
-.hero{min-height:calc(100vh - 50px);display:grid;grid-template-columns:60% 40%}
-.hl{background:var(--dk2);padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.hl::before{content:'';position:absolute;bottom:-80px;left:-80px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(176,144,80,.08) 0%,transparent 66%)}
-.hbg{font-family:var(--ff);font-size:220px;font-weight:300;color:rgba(176,144,80,.038);position:absolute;right:-20px;top:-16px;line-height:1;pointer-events:none;letter-spacing:-.02em}
-.hey{font-size:9px;font-weight:300;letter-spacing:.32em;text-transform:uppercase;color:var(--g);margin-bottom:18px}
-.ht{font-family:var(--ff);font-size:70px;font-weight:300;color:#fff;line-height:1.03;letter-spacing:-.01em}.ht em{font-style:italic;color:var(--gl)}
-.hd{width:36px;height:1px;background:var(--g);margin:24px 0}
-.hx{font-size:13px;font-weight:300;color:rgba(255,255,255,.44);line-height:1.76;max-width:340px}
-.hst{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;border-top:1px solid rgba(255,255,255,.05)}
+/* ─── HERO ─────────────────────────────────────────────────────────────── */
+.hero{min-height:calc(100vh - 58px);display:grid;grid-template-columns:58% 42%}
+.hl{
+  background:var(--T4);
+  padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden
+}
+.hl::before{content:'';position:absolute;bottom:-80px;left:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(92,74,40,.12) 0%,transparent 66%)}
+.hbg{
+  font-family:var(--ff);font-size:200px;font-weight:300;
+  color:rgba(227,222,207,.032);
+  position:absolute;right:-16px;top:-14px;line-height:1;pointer-events:none
+}
+.hey{font-size:9px;font-weight:300;letter-spacing:.34em;text-transform:uppercase;color:var(--H2);margin-bottom:18px}
+.ht{font-family:var(--ff);font-size:62px;font-weight:300;color:var(--W);line-height:1.04;letter-spacing:-.005em}
+.ht em{font-family:var(--fi);font-style:italic;color:var(--H2);font-size:70px}
+.hdiv{width:36px;height:1px;background:var(--H2);margin:24px 0}
+.hx{font-size:13px;font-weight:300;color:rgba(227,222,207,.46);line-height:1.76;max-width:340px}
+.hst{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;border-top:1px solid rgba(227,222,207,.07)}
 .hsi{padding:18px 14px;background:rgba(255,255,255,.025)}
-.hsv{font-family:var(--ff);font-size:31px;font-weight:300;color:var(--gl);line-height:1}
-.hsl{font-size:8.5px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:4px}
+.hsv{font-family:var(--ff);font-size:29px;font-weight:300;color:var(--H2);line-height:1}
+.hsl{font-size:8.5px;font-weight:300;letter-spacing:.13em;text-transform:uppercase;color:rgba(227,222,207,.3);margin-top:5px}
 
-.hr{background:var(--c2);padding:80px 48px;display:flex;flex-direction:column;justify-content:center;position:relative}
-.hr::before{content:'';position:absolute;top:0;left:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gmd),transparent)}
+.hr{background:var(--H);padding:80px 48px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hr::before{content:'';position:absolute;top:0;left:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-md),transparent)}
 
-/* PAGE HEADER */
-.ph{background:var(--dk2);padding:36px 60px 32px;position:relative;overflow:hidden;border-bottom:1px solid var(--gsm)}
-.ph::after{content:attr(data-bg);position:absolute;right:48px;top:50%;transform:translateY(-50%);font-family:var(--ff);font-size:130px;font-weight:300;color:rgba(176,144,80,.032);line-height:1;pointer-events:none;letter-spacing:-.02em}
-.pey{font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:7px}
-.pt{font-family:var(--ff);font-size:42px;font-weight:300;color:#fff;line-height:1.08;letter-spacing:-.01em}.pt em{font-style:italic;color:var(--gl)}
-.px{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.42);margin-top:9px;max-width:540px;line-height:1.66}
-.prl{width:34px;height:1px;background:var(--g);margin:13px 0 0}
+/* ─── PAGE HEADER ──────────────────────────────────────────────────────── */
+.ph{background:var(--T3);padding:36px 60px 32px;position:relative;overflow:hidden;border-bottom:1px solid rgba(92,74,40,.2)}
+.ph::after{content:attr(data-bg);position:absolute;right:48px;top:50%;transform:translateY(-50%);font-family:var(--ff);font-size:120px;font-weight:300;color:rgba(227,222,207,.032);line-height:1;pointer-events:none;letter-spacing:-.01em}
+.pey{font-size:9px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--H2);margin-bottom:7px}
+.pt{font-family:var(--ff);font-size:40px;font-weight:300;color:var(--W);line-height:1.1}
+.pt em{font-family:var(--fi);font-style:italic;color:var(--H2)}
+.px{font-size:12.5px;font-weight:300;color:rgba(227,222,207,.44);margin-top:9px;max-width:540px;line-height:1.65}
+.prl{width:34px;height:1px;background:var(--H2);margin:13px 0 0}
 
-/* BODY */
+/* ─── DARK SECTIONS ────────────────────────────────────────────────────── */
+.dk-section{background:var(--T3);padding:40px 60px}
+.dk-section .sl{color:var(--H2)}
+.dk-section .st{color:var(--W)}
+.dk-section .sx{color:rgba(227,222,207,.44)}
+
+/* ─── BODY ──────────────────────────────────────────────────────────────── */
 .pb{padding:40px 60px}
 
-/* SECTION */
-.sl{font-size:9px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--g);margin-bottom:5px;margin-top:32px}.sl:first-child{margin-top:0}
-.st{font-family:var(--ff);font-size:27px;font-weight:400;color:var(--ink);line-height:1.14;margin-bottom:6px}
+/* ─── SECTION ───────────────────────────────────────────────────────────── */
+.sl{font-size:9px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:var(--T2);margin-bottom:5px;margin-top:32px}.sl:first-child{margin-top:0}
+.st{font-family:var(--ff);font-size:26px;font-weight:400;color:var(--T);line-height:1.14;margin-bottom:6px}
 .sx{font-size:12.5px;font-weight:300;color:var(--i4);margin-bottom:18px;line-height:1.72;max-width:640px}
 
-/* KPI CARDS */
+/* ─── KPI CARDS (light) ─────────────────────────────────────────────────── */
 .kg{display:grid;gap:9px}
 .k2{grid-template-columns:1fr 1fr}.k3{grid-template-columns:repeat(3,1fr)}.k4{grid-template-columns:repeat(4,1fr)}
-.kc{background:var(--dk3);border:1px solid rgba(176,144,80,.12);border-radius:10px;padding:16px 18px;transition:all .18s}
-.kc:hover{border-color:var(--gsm);transform:translateY(-1px)}
-.kc.lt{background:#fff;border-color:var(--i15)}
-.kc.lt:hover{border-color:var(--gsm)}
-.kc.G{border-left:3px solid var(--g)}
-.kc.R{border-left:3px solid var(--rd)}
-.kc.E{border-left:3px solid var(--gn)}
-.kl{font-size:9px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:4px}
-.kc.lt .kl{color:var(--i4)}
-.kv{font-family:var(--ff);font-size:26px;font-weight:300;color:var(--gl);line-height:1;margin-bottom:3px}
-.kc.lt .kv{color:var(--gd)}
-.kd{font-size:11px;font-weight:300;color:rgba(255,255,255,.34)}
-.kc.lt .kd{color:var(--i4)}
-.up{color:#5A9A6A;font-weight:500}.dn{color:#B06050;font-weight:500}.go{color:var(--gd);font-weight:500}
-.kc.lt .up{color:var(--gn)}.kc.lt .dn{color:var(--rd)}
+.kc{background:var(--W);border:1px solid var(--i15);border-radius:10px;padding:15px 17px;transition:all .18s}
+.kc:hover{border-color:var(--gold-sm);transform:translateY(-1px);box-shadow:0 5px 18px rgba(69,53,25,.08)}
+.kc.G{border-left:3px solid var(--T2)}.kc.R{border-left:3px solid var(--rd)}.kc.E{border-left:3px solid var(--gn)}
+.kl{font-size:9px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--i4);margin-bottom:4px}
+.kv{font-family:var(--ff);font-size:24px;font-weight:400;color:var(--T);line-height:1;margin-bottom:3px}
+.kd{font-size:11px;font-weight:300;color:var(--i4)}
+.up{color:var(--gn);font-weight:500}.dn{color:var(--rd);font-weight:500}.go{color:var(--T2);font-weight:500}
 
-/* CALLOUTS */
+/* ─── KPI CARDS (dark) ──────────────────────────────────────────────────── */
+.kdc{background:rgba(255,255,255,.04);border:1px solid rgba(227,222,207,.1);border-radius:10px;padding:15px 17px;transition:all .18s}
+.kdc:hover{border-color:rgba(227,222,207,.22)}
+.kdc.G{border-left:3px solid var(--H2)}
+.kdc .kl{color:rgba(227,222,207,.34)}
+.kdc .kv{color:var(--H2)}
+.kdc .kd{color:rgba(227,222,207,.36)}
+
+/* ─── CALLOUTS ──────────────────────────────────────────────────────────── */
 .cal{border-radius:6px;padding:14px 18px;margin-bottom:10px;border-left:3px solid}
-.cal.G{background:var(--gf);border-color:var(--g)}
-.cal.R{background:var(--rf);border-color:var(--rd)}
-.cal.E{background:var(--nf);border-color:var(--gn)}
-.cal.D{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.12)}
+.cal.G{background:var(--gold-xs);border-color:var(--T2)}
+.cal.R{background:var(--rdf);border-color:var(--rd)}
+.cal.E{background:var(--gnf);border-color:var(--gn)}
+.cal.D{background:rgba(255,255,255,.04);border-color:rgba(227,222,207,.18)}
 .ct{font-size:12.5px;font-weight:500;margin-bottom:4px}
-.cal.G .ct{color:var(--gd)}.cal.R .ct{color:var(--rd)}.cal.E .ct{color:var(--gn)}.cal.D .ct{color:rgba(255,255,255,.8)}
+.cal.G .ct{color:var(--T)}.cal.R .ct{color:var(--rd)}.cal.E .ct{color:var(--gn)}.cal.D .ct{color:rgba(227,222,207,.82)}
 .cb{font-size:12px;font-weight:300;color:var(--i4);line-height:1.64}
-.cal.D .cb{color:rgba(255,255,255,.42)}
+.cal.D .cb{color:rgba(227,222,207,.44)}
 
-/* INSIGHT */
-.ins{background:var(--c2);border:1px solid var(--gsm);border-radius:10px;padding:18px 20px;margin:14px 0}
-.inh{font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+/* ─── INSIGHT ────────────────────────────────────────────────────────────── */
+.ins{background:var(--H);border:1px solid var(--gold-sm);border-radius:10px;padding:18px 20px;margin:14px 0}
+.inh{font-size:9px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--T2);margin-bottom:8px}
 .inl{list-style:none}
 .inl li{font-size:12px;font-weight:300;color:var(--i4);padding:5px 0;border-bottom:1px solid var(--i15);line-height:1.56}
-.inl li:last-child{border:none}.inl li::before{content:'— ';color:var(--g)}
+.inl li:last-child{border:none}.inl li::before{content:'— ';color:var(--T2)}
+.dins{background:rgba(255,255,255,.04);border:1px solid rgba(227,222,207,.12);border-radius:10px;padding:18px 20px;margin:14px 0}
+.dins .inh{color:var(--H2)}
+.dins .inl li{color:rgba(227,222,207,.44);border-color:rgba(255,255,255,.06)}
+.dins .inl li::before{color:var(--H2)}
 
-/* DARK INSIGHT */
-.dins{background:var(--dk3);border:1px solid var(--gsm);border-radius:10px;padding:18px 20px;margin:14px 0}
-.dins .inh{color:var(--gl)}
-.dins .inl li{color:rgba(255,255,255,.48);border-color:rgba(255,255,255,.06)}
-.dins .inl li::before{color:var(--g)}
-
-/* TABLE */
+/* ─── TABLE ──────────────────────────────────────────────────────────────── */
 .tw{overflow-x:auto;margin:10px 0}
 table{width:100%;border-collapse:collapse;font-size:12px}
-thead tr{border-bottom:2px solid var(--gsm)}
-th{font-size:9px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--i4);padding:8px 10px;text-align:left;background:var(--c2)}
+thead tr{border-bottom:2px solid var(--gold-sm)}
+th{font-size:9px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--i4);padding:8px 10px;text-align:left;background:var(--H)}
 td{padding:8px 10px;border-bottom:1px solid var(--i15);color:var(--i4);font-weight:300}
-tr.bo td{font-weight:500;color:var(--ink);background:var(--c2)}
-tr.go td{color:var(--gd);font-weight:500;background:var(--gf)}
-tr.rd td{color:var(--rd);font-weight:500;background:var(--rf)}
-tr.en td{color:var(--gn);font-weight:500;background:var(--nf)}
-tr.dk-row td{background:var(--dk3);color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.05)}
-tr.dk-row.go td{color:var(--gl);background:rgba(176,144,80,.1)}
-tr:hover:not(.bo):not(.go):not(.rd):not(.en):not(.dk-row) td{background:var(--gf)}
+tr.bo td{font-weight:500;color:var(--T);background:var(--H)}
+tr.go td{color:var(--T2);font-weight:500;background:var(--gold-xs)}
+tr.rd td{color:var(--rd);font-weight:500;background:var(--rdf)}
+tr.en td{color:var(--gn);font-weight:500;background:var(--gnf)}
+.dktable th{background:rgba(255,255,255,.06);color:rgba(227,222,207,.34)}
+.dktable td{color:rgba(227,222,207,.46);border-color:rgba(255,255,255,.06)}
+.dktable tr.bo td{background:rgba(255,255,255,.08);color:var(--W)}
+.dktable tr.go td{background:rgba(92,74,40,.2);color:var(--H2)}
+.dktable tr.rd td{background:rgba(122,32,24,.12);color:#D08070}
+tr:hover:not(.bo):not(.go):not(.rd):not(.en) td{background:var(--gold-xs)}
 tr:last-child td{border:none}
 
-/* TABS */
+/* ─── TABS ───────────────────────────────────────────────────────────────── */
 .tabs{display:flex;border-bottom:1px solid var(--i15);margin-bottom:22px;overflow-x:auto}.tabs::-webkit-scrollbar{display:none}
-.tab{padding:9px 15px;font-size:9.5px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--i4);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap}
-.tab:hover{color:var(--g)}.tab.on{color:var(--gd);border-bottom-color:var(--g);font-weight:500}
+.tab{padding:9px 15px;font-size:9.5px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--i4);cursor:pointer;border:none;background:none;border-bottom:2.5px solid transparent;transition:all .15s;white-space:nowrap}
+.tab:hover{color:var(--T2)}.tab.on{color:var(--T);border-bottom-color:var(--T2);font-weight:500}
 .tp{display:none}.tp.on{display:block;animation:pi .24s var(--ez)}
-
-/* DARK TABS */
 .dtabs{border-color:rgba(255,255,255,.08)}
-.dtabs .tab{color:rgba(255,255,255,.34)}.dtabs .tab:hover{color:rgba(255,255,255,.7)}.dtabs .tab.on{color:var(--gl);border-bottom-color:var(--g)}
+.dtabs .tab{color:rgba(227,222,207,.34)}.dtabs .tab:hover{color:rgba(227,222,207,.75)}.dtabs .tab.on{color:var(--H);border-bottom-color:var(--H2)}
 
-/* YEAR PILLS */
+/* ─── YEAR PILLS ─────────────────────────────────────────────────────────── */
 .yp{display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap}
-.yb{padding:5px 14px;font-size:9.5px;font-weight:400;letter-spacing:.11em;text-transform:uppercase;border:1px solid rgba(255,255,255,.12);border-radius:20px;cursor:pointer;background:transparent;color:rgba(255,255,255,.4);transition:all .15s}
-.yb:hover{border-color:var(--g);color:rgba(255,255,255,.8)}.yb.on{background:var(--g);border-color:var(--g);color:#fff}
+.yb{padding:5px 14px;font-size:9.5px;font-weight:400;letter-spacing:.11em;text-transform:uppercase;border:1px solid rgba(227,222,207,.16);border-radius:20px;cursor:pointer;background:transparent;color:rgba(227,222,207,.42);transition:all .15s}
+.yb:hover{border-color:var(--H2);color:rgba(227,222,207,.82)}.yb.on{background:var(--H2);border-color:var(--H2);color:var(--T4)}
 .yc{display:none}.yc.on{display:block;animation:pi .24s var(--ez)}
 
-/* TIMELINE */
+/* ─── TIMELINE ───────────────────────────────────────────────────────────── */
 .tl{position:relative;padding-left:26px}
-.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,var(--g),var(--gsm),transparent)}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:linear-gradient(to bottom,var(--T2),rgba(92,74,40,.2),transparent)}
 .ti{position:relative;margin-bottom:24px}
-.tdot{position:absolute;left:-22px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--dk2);border:1.5px solid var(--g);transition:background .15s}
-.ti:hover .tdot{background:var(--g)}
-.tq{font-size:9px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
-.tn{font-size:14px;font-weight:500;color:rgba(255,255,255,.88);margin-bottom:4px}
-.tx{font-size:12px;font-weight:300;color:rgba(255,255,255,.44);line-height:1.62}
+.tdot{position:absolute;left:-22px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--W);border:1.5px solid var(--T2);transition:background .15s}
+.ti:hover .tdot{background:var(--T2)}
+.tq{font-size:9px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--T2);margin-bottom:4px}
+.tn{font-size:14px;font-weight:500;color:var(--T);margin-bottom:4px}
+.tx{font-size:12px;font-weight:300;color:var(--i4);line-height:1.62}
 .tgs{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+/* dark timeline */
+.dtl .tl::before{background:linear-gradient(to bottom,var(--H2),rgba(227,222,207,.2),transparent)}
+.dtl .tdot{background:var(--T3);border-color:var(--H2)}
+.dtl .ti:hover .tdot{background:var(--H2)}
+.dtl .tq{color:var(--H2)}
+.dtl .tn{color:var(--W)}
+.dtl .tx{color:rgba(227,222,207,.44)}
 
-/* LIGHT TIMELINE */
-.tl-lt .tl::before{background:linear-gradient(to bottom,var(--g),var(--gsm),transparent)}
-.tl-lt .tdot{background:var(--cr)}
-.tl-lt .tn{color:var(--ink)}
-.tl-lt .tx{color:var(--i4)}
+/* ─── TAGS ───────────────────────────────────────────────────────────────── */
+.tag{font-size:9px;padding:2px 7px;border-radius:20px;background:var(--gold-xs);color:var(--T2);border:1px solid var(--gold-sm);display:inline-block;letter-spacing:.06em}
+.tag.r{background:var(--rdf);color:var(--rd);border-color:var(--rdb)}
+.tag.g{background:var(--gnf);color:var(--gn);border-color:var(--gnb)}
+.tag.w{background:rgba(255,255,255,.08);color:rgba(227,222,207,.65);border-color:rgba(255,255,255,.14)}
 
-/* TAGS */
-.tag{font-size:9px;padding:2px 7px;border-radius:20px;background:rgba(176,144,80,.12);color:var(--g);border:1px solid var(--gsm);display:inline-block;letter-spacing:.06em}
-.tag.r{background:var(--rf);color:var(--rd);border-color:var(--rb)}
-.tag.g{background:var(--nf);color:var(--gn);border-color:var(--nb)}
-.tag.w{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.12)}
-
-/* ACTION LIST */
+/* ─── ACTION LIST ────────────────────────────────────────────────────────── */
 .al{display:flex;flex-direction:column;gap:8px;margin:10px 0}
-.ai{display:flex;align-items:flex-start;gap:12px;padding:12px 15px;background:var(--dk3);border:1px solid rgba(176,144,80,.1);border-radius:7px;transition:all .15s}
-.ai:hover{border-color:var(--gsm);background:rgba(176,144,80,.06)}
-.ai.lt{background:#fff;border-color:var(--i15)}
-.ai.lt:hover{border-color:var(--gsm);background:var(--gf)}
-.an{font-family:var(--ff);font-size:20px;font-weight:300;color:rgba(176,144,80,.3);min-width:30px;line-height:1}
-.ab{flex:1}
-.at{font-size:13px;font-weight:500;color:rgba(255,255,255,.88);margin-bottom:3px}
-.ai.lt .at{color:var(--ink)}
-.ax{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.58}
-.ai.lt .ax{color:var(--i4)}
+.ai{display:flex;align-items:flex-start;gap:12px;padding:12px 15px;background:var(--W);border:1px solid var(--i15);border-radius:7px;transition:all .15s}
+.ai:hover{border-color:var(--gold-sm);background:var(--gold-xs)}
+.dk .ai{background:rgba(255,255,255,.04);border-color:rgba(227,222,207,.1)}
+.dk .ai:hover{border-color:rgba(227,222,207,.22);background:rgba(255,255,255,.06)}
+.an{font-family:var(--ff);font-size:18px;font-weight:300;color:var(--gold-sm);min-width:28px;line-height:1}
+.ab{flex:1}.at{font-size:13px;font-weight:500;color:var(--T);margin-bottom:3px}
+.dk .at{color:rgba(227,222,207,.88)}
+.ax{font-size:11.5px;font-weight:300;color:var(--i4);line-height:1.58}
+.dk .ax{color:rgba(227,222,207,.44)}
 .am{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
 .pr{display:inline-flex;align-items:center;gap:3px;font-size:8.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:20px}
-.pr::before{content:'●';font-size:5px}
-.pr.cr{background:var(--rf);color:var(--rd)}.pr.hi{background:rgba(176,144,80,.15);color:var(--g)}.pr.md{background:var(--nf);color:var(--gn)}
+.pr::before{content:'●';font-size:5.5px}
+.pr.cr{background:var(--rdf);color:var(--rd)}.pr.hi{background:var(--gold-xs);color:var(--T2)}.pr.md{background:var(--gnf);color:var(--gn)}
 
-/* PHASES */
-.phs{display:flex;border:1px solid var(--gsm);border-radius:10px;overflow:hidden;margin:20px 0}
-.phi{flex:1;padding:12px 8px;text-align:center;background:rgba(255,255,255,.02);border-right:1px solid var(--gsm);cursor:pointer;transition:background .15s}
-.phi:last-child{border-right:none}.phi:hover{background:rgba(176,144,80,.08)}.phi.cur{background:var(--g)}
-.phn{font-family:var(--ff);font-size:18px;font-weight:300;color:var(--g)}.phi.cur .phn{color:#fff}
-.phl{font-size:8px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:2px;line-height:1.3}.phi.cur .phl{color:rgba(255,255,255,.7)}
+/* ─── PHASES ──────────────────────────────────────────────────────────────── */
+.phs{display:flex;border:1px solid var(--gold-sm);border-radius:10px;overflow:hidden;margin:20px 0}
+.phi{flex:1;padding:12px 8px;text-align:center;background:rgba(255,255,255,.03);border-right:1px solid var(--gold-sm);cursor:pointer;transition:background .15s}
+.phi:last-child{border-right:none}.phi:hover{background:rgba(227,222,207,.06)}.phi.cur{background:var(--T2)}
+.phn{font-family:var(--ff);font-size:17px;font-weight:400;color:var(--H2)}.phi.cur .phn{color:var(--W)}
+.phl{font-size:8px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(227,222,207,.32);margin-top:2px;line-height:1.3}.phi.cur .phl{color:rgba(255,255,255,.65)}
 
-/* BARS */
-.bar-r{margin:6px 0}
-.bar-t{display:flex;justify-content:space-between;font-size:11px;color:var(--i4);margin-bottom:3px}
-.bar-bg{height:5px;background:var(--sand);border-radius:3px;overflow:hidden}
-.bar-f{height:100%;border-radius:3px;background:var(--g);transition:width 1.4s var(--ez)}
-.bar-f.g{background:var(--gn)}.bar-f.r{background:var(--rd)}
-.dbar-bg{height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
-.dbar-f{height:100%;border-radius:3px;background:var(--g);transition:width 1.4s var(--ez)}
+/* ─── GAUGES ─────────────────────────────────────────────────────────────── */
+.gauges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.gi{flex:1;min-width:96px;background:rgba(255,255,255,.04);border:1px solid rgba(227,222,207,.1);border-radius:8px;padding:12px;text-align:center}
+.gv{font-family:var(--ff);font-size:23px;font-weight:300;color:var(--W);line-height:1}
+.gl2{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(227,222,207,.32);margin-top:3px}
+.grk{font-size:9.5px;margin-top:5px;padding:2px 6px;border-radius:4px;display:inline-block}
+.grk.bad{color:#D07060;background:rgba(176,80,64,.12)}.grk.ok{color:var(--H2);background:rgba(92,74,40,.18)}.grk.good{color:#70AA80;background:rgba(80,160,100,.1)}
 
-/* REV CHART */
+/* ─── OUTLET CARDS ───────────────────────────────────────────────────────── */
+.og{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.oc{background:rgba(255,255,255,.04);border:1px solid rgba(227,222,207,.1);border-radius:10px;overflow:hidden;transition:all .18s;display:flex;flex-direction:column}
+.oc:hover{border-color:rgba(227,222,207,.22);transform:translateY(-2px)}
+.os{height:3px}
+.ob{padding:15px;flex:1}
+.on2{font-family:var(--ff);font-size:14px;font-weight:400;color:var(--W);margin-bottom:1px}
+.osub{font-size:8.5px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(227,222,207,.3);margin-bottom:9px;font-style:italic;font-family:var(--fi)}
+.od{font-size:11.5px;font-weight:300;color:rgba(227,222,207,.42);line-height:1.6;margin-bottom:10px}
+.oac{display:flex;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,.06);padding-top:9px;margin-top:auto}
+.oa{font-size:11px;font-weight:300;color:rgba(227,222,207,.5);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.oa::before{content:'→';color:var(--H2);flex-shrink:0;font-size:11px}
+
+/* ─── SUSTENTABILIDADE ───────────────────────────────────────────────────── */
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.sc{background:rgba(255,255,255,.04);border:1px solid rgba(227,222,207,.1);border-radius:10px;padding:16px;transition:all .18s}
+.sc:hover{border-color:rgba(227,222,207,.2)}
+.si{font-size:20px;margin-bottom:8px}
+.st2{font-family:var(--ff);font-size:13px;font-weight:400;color:rgba(227,222,207,.88);margin-bottom:5px}
+.sx2{font-size:11.5px;font-weight:300;color:rgba(227,222,207,.42);line-height:1.64}
+.stag{display:inline-block;font-size:8.5px;padding:2px 7px;border-radius:20px;background:var(--gnf);color:var(--gn);border:1px solid var(--gnb);margin-top:7px}
+
+/* ─── REV BARS ───────────────────────────────────────────────────────────── */
 .rc{display:flex;flex-direction:column;gap:7px;margin:16px 0}
 .rr{display:flex;align-items:center;gap:12px}
-.rl{font-size:10.5px;font-weight:300;color:rgba(255,255,255,.4);min-width:82px;text-align:right}
-.rw{flex:1;height:30px;background:rgba(255,255,255,.05);border-radius:6px;overflow:hidden}
-.rf{height:100%;background:linear-gradient(90deg,var(--gd),var(--g));display:flex;align-items:center;padding-left:9px;font-size:11px;font-weight:400;color:#fff;transition:width 1.4s var(--ez);border-radius:6px}
-.rr.tgt .rf{background:linear-gradient(90deg,#2d2816,#3d3218)}
+.rl{font-size:10.5px;font-weight:300;color:rgba(227,222,207,.4);min-width:82px;text-align:right}
+.rw{flex:1;height:29px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+.rf{height:100%;background:linear-gradient(90deg,var(--T2),var(--T));display:flex;align-items:center;padding-left:9px;font-size:11px;font-weight:400;color:var(--H);transition:width 1.4s var(--ez);border-radius:6px}
+.rr.tgt .rf{background:linear-gradient(90deg,rgba(227,222,207,.1),rgba(227,222,207,.18))}
+.rr.tgt .rf{color:rgba(227,222,207,.7)}
 
-/* GAUGES */
-.gauges{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
-.gi{flex:1;min-width:96px;background:var(--dk3);border:1px solid rgba(176,144,80,.12);border-radius:8px;padding:12px;text-align:center}
-.gv{font-family:var(--ff);font-size:24px;font-weight:300;color:#fff;line-height:1}
-.gl2{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:3px}
-.grk{font-size:9.5px;margin-top:5px;padding:2px 6px;border-radius:4px;display:inline-block}
-.grk.bad{color:#B06050;background:rgba(176,80,80,.1)}.grk.ok{color:var(--g);background:rgba(176,144,80,.1)}.grk.good{color:#5A9A6A;background:rgba(90,154,106,.1)}
+/* ─── BRAND MATRIX ───────────────────────────────────────────────────────── */
+.bm{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(227,222,207,.12);border-radius:10px;overflow:hidden;margin:14px 0}
+.bc{background:rgba(255,255,255,.04);padding:18px;transition:background .15s}
+.bc:hover{background:rgba(227,222,207,.06)}
+.bc-label{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--H2);margin-bottom:5px}
+.bc-val{font-size:13px;font-weight:300;color:rgba(227,222,207,.72);line-height:1.55}
 
-/* OUTLET CARDS */
-.og{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
-.oc{background:var(--dk3);border:1px solid rgba(176,144,80,.1);border-radius:10px;overflow:hidden;transition:all .18s;display:flex;flex-direction:column}
-.oc:hover{border-color:var(--gsm);transform:translateY(-2px)}
-.os{height:3px;background:var(--g)}
-.ob{padding:15px;flex:1}
-.on2{font-family:var(--ff);font-size:15px;font-weight:400;color:#fff;margin-bottom:1px}
-.osub{font-size:8.5px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:9px}
-.od{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.6;margin-bottom:10px}
-.oac{display:flex;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,.06);padding-top:9px;margin-top:auto}
-.oa{font-size:11px;font-weight:300;color:rgba(255,255,255,.5);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
-.oa::before{content:'→';color:var(--g);flex-shrink:0;font-size:11px;margin-top:1px}
-
-/* SUSTAINABILITY */
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
-.sc{background:var(--dk3);border:1px solid rgba(176,144,80,.1);border-radius:10px;padding:16px;transition:all .18s}
-.sc:hover{border-color:var(--gsm)}
-.si{font-size:20px;margin-bottom:8px}
-.st2{font-size:13px;font-weight:500;color:rgba(255,255,255,.88);margin-bottom:5px}
-.sx2{font-size:11.5px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.64}
-.stag{display:inline-block;font-size:8.5px;padding:2px 7px;border-radius:20px;background:var(--nf);color:var(--gn);border:1px solid var(--nb);margin-top:7px}
-
-/* DIVIDER */
+/* ─── DIVIDERS ───────────────────────────────────────────────────────────── */
 hr.rule{border:none;border-top:1px solid var(--i15);margin:24px 0}
-hr.dk{border-top-color:rgba(255,255,255,.07);margin:24px 0}
-hr.gold{border-top-color:var(--gsm);margin:24px 0}
+hr.gold{border-top-color:var(--gold-sm);margin:24px 0}
+hr.dk{border:none;border-top:1px solid rgba(255,255,255,.07);margin:24px 0}
 
-/* DARK SECTION */
-.dark-section{background:var(--dk2);padding:40px 60px;margin:0}
-.dark-section .sl{color:var(--gl)}
-.dark-section .st{color:#fff}
-.dark-section .sx{color:rgba(255,255,255,.44)}
-
-/* BRAND MATRIX */
-.bm{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(176,144,80,.15);border-radius:10px;overflow:hidden;margin:14px 0}
-.bc{background:var(--dk3);padding:20px;transition:background .15s}
-.bc:hover{background:rgba(176,144,80,.06)}
-.bc-label{font-size:9px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
-.bc-val{font-size:14px;font-weight:400;color:rgba(255,255,255,.82);line-height:1.5}
-
-/* RESPONSIVE */
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
 @media(max-width:960px){
-  .hero{grid-template-columns:1fr}.hr{display:none}.hl{padding:46px 28px}.ht{font-size:50px}
-  .pb{padding:30px 22px}.ph{padding:28px 24px}.dark-section{padding:30px 22px}
+  .hero{grid-template-columns:1fr}.hr{display:none}.hl{padding:46px 26px}.ht{font-size:46px}.ht em{font-size:52px}
+  .pb{padding:28px 20px}.ph,.dk-section{padding:28px 22px}
   .k4{grid-template-columns:1fr 1fr}.k3{grid-template-columns:1fr 1fr}.og{grid-template-columns:1fr 1fr}.sg{grid-template-columns:1fr 1fr}
-  #nav{padding:0 16px}.nbt:nth-child(n+9){display:none}
+  #nav{padding:0 20px}
+  .nlinks{display:none}
+  .ham{display:flex}
+  .nyr{display:none}
 }
+@media(min-width:961px){#drawer{display:none!important}}
 </style>
 </head>
 <body>
-<div id="ld"><div class="lv">VL</div><div class="lx">Grand Hotel Algarve · Est. 1966</div><div class="ll"></div></div>
+
+<div id="ld"><div class="lv">VL</div><div class="lsub">Grand Hotel Algarve · Est. 1966</div><div class="lline"></div></div>
 
 <nav id="nav">
-  <div class="nbr">VILALA<em>R</em>A</div>
-  <div class="nls">
-    <button class="nbt on" data-page="home">Visão</button>
+  <div class="nbrand" data-page="home">VILALA<span>R</span>A</div>
+  <div class="nlinks">
+    <button class="nbt on"  data-page="home">Visão</button>
     <button class="nbt" data-page="diag">Diagnóstico</button>
     <button class="nbt" data-page="direto">Canal Direto</button>
     <button class="nbt" data-page="merc">Mercados</button>
-    <button class="nbt" data-page="demand">Demand Gen</button>
+    <button class="nbt" data-page="ads">Google Ads</button>
     <button class="nbt" data-page="conv">Conversão &amp; CRM</button>
     <button class="nbt" data-page="rev">Revenue/Hóspede</button>
     <button class="nbt" data-page="marca">Marca</button>
@@ -292,8 +370,25 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
     <button class="nbt" data-page="fin">Financeiro</button>
     <button class="nbt" data-page="kpi">KPIs</button>
   </div>
-  <div class="nyr">Marketing-Led Growth Plan · 2026–2031</div>
+  <button class="ham" id="hamBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nyr">Growth Marketing Plan · 2026–2031</div>
 </nav>
+
+<div id="drawer">
+  <button class="dbt on"  data-page="home">Visão</button>
+  <button class="dbt" data-page="diag">Diagnóstico</button>
+  <button class="dbt" data-page="direto">Canal Direto</button>
+  <button class="dbt" data-page="merc">Mercados</button>
+  <button class="dbt" data-page="ads">Google Ads</button>
+  <button class="dbt" data-page="conv">Conversão &amp; CRM</button>
+  <button class="dbt" data-page="rev">Revenue / Hóspede</button>
+  <button class="dbt" data-page="marca">Marca &amp; Posicionamento</button>
+  <button class="dbt" data-page="sus">Sustentabilidade</button>
+  <button class="dbt" data-page="fin">Financeiro</button>
+  <button class="dbt" data-page="kpi">KPIs &amp; Performance</button>
+</div>
 
 <div id="app">
 <!-- HOME -->
@@ -303,28 +398,37 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
     <div class="hbg">V</div>
     <div>
       <div class="hey">Vilalara Grand Hotel Algarve · Est. 1966</div>
-      <h1 class="ht">Marketing-Led<br><em>Growth Plan</em><br>2026–2031</h1>
-      <div class="hd"></div>
-      <p class="hx">O crescimento do Vilalara é impulsionado pelo Marketing. O canal direto é o principal motor de margem e controlo. Todas as decisões — mercados, pricing, produto, experiências — estão alinhadas com geração de revenue qualificado.</p>
+      <h1 class="ht">Growth<br><em>Marketing</em><br>Plan 2026–31</h1>
+      <div class="hdiv"></div>
+      <p class="hx">Plano estratégico de crescimento com foco no canal direto, mercados prioritários, optimização de revenue por hóspede e posicionamento de marca premium.</p>
     </div>
     <div class="hst">
-      <div class="hsi"><div class="hsv">€10.56M</div><div class="hsl">Revenue 2025 · base real</div></div>
-      <div class="hsi"><div class="hsv">€11.94M</div><div class="hsl">Budget 2026 · target</div></div>
+      <div class="hsi"><div class="hsv">€10.56M</div><div class="hsl">Revenue 2025 · real</div></div>
+      <div class="hsi"><div class="hsv">€11.94M</div><div class="hsl">Budget 2026</div></div>
       <div class="hsi"><div class="hsv">€16M+</div><div class="hsl">Meta 2031</div></div>
     </div>
   </div>
   <div class="hr">
-    <div class="hey">A lógica do plano</div>
-    <div class="st" style="font-size:22px;color:var(--ink);margin-bottom:14px">Marketing como motor de revenue</div>
-    <div class="cal G" style="margin-bottom:10px"><div class="ct">O canal direto é o principal ativo estratégico</div><div class="cb">Cada ponto percentual de crescimento de direto (actualmente 61,5%) vale €130K de margem adicional por ano. Em 2031, com 65% de direto e €16M de revenue, a diferença vs status quo é de €1.4M anuais em comissões não pagas.</div></div>
-    <div class="cal E" style="margin-bottom:10px"><div class="ct">Os resultados financeiros são consequência do Marketing</div><div class="cb">ROAS 22,7× já coloca o Vilalara no top 1% da hotelaria de luxo europeia. O trabalho agora é escalar com precisão: mercados certos, canais certos, mensagem certa, no momento certo.</div></div>
-    <div class="cal G"><div class="ct">Toda a decisão tem um papel na geração de procura qualificada</div><div class="cb">F&B, Spa, Experiências, Sustentabilidade e Posicionamento não são departamentos separados do Marketing — são argumentos de captação, conversão e fidelização. Este plano trata-os como tal.</div></div>
-    <div class="phs" style="margin-top:24px">
-      <div class="phi cur" data-yr="yr26"><div class="phn">26</div><div class="phl">Base</div></div>
+    <div class="sl">Budget 2026 vs OTB — 4 Maio</div>
+    <div class="kg k2" style="margin-top:10px">
+      <div class="kc G"><div class="kl">Budget 2026</div><div class="kv">€11.941.356</div><div class="kd">24.366 rm nts · ADR €490,08</div></div>
+      <div class="kc G"><div class="kl">Canal Direto Budget</div><div class="kv">€7.500.049</div><div class="kd">14.069 rm nts · ADR €533,09</div></div>
+      <div class="kc R"><div class="kl">OTB 4 Maio</div><div class="kv">€7.207.373</div><div class="kd">16.048 rm nts · ADR €449 (−€41 vs budget)</div></div>
+      <div class="kc R"><div class="kl">Gap para Budget</div><div class="kv">€4.734K</div><div class="kd">8.318 rm nts · 39,6% do target</div></div>
+    </div>
+    <div class="phs" style="margin-top:22px">
+      <div class="phi cur" data-yr="yr26"><div class="phn">26</div><div class="phl">Execução</div></div>
       <div class="phi" data-yr="yr27"><div class="phn">27</div><div class="phl">Fundação</div></div>
       <div class="phi" data-yr="yr28"><div class="phn">28</div><div class="phl">Escala</div></div>
       <div class="phi" data-yr="yr29"><div class="phn">29</div><div class="phl">Premium</div></div>
       <div class="phi" data-yr="yr31"><div class="phn">31</div><div class="phl">Exlibris</div></div>
+    </div>
+    <div class="sl" style="margin-top:22px">Eixos do plano</div>
+    <div class="kg k2" style="gap:7px;margin-top:8px">
+      <div class="cal G" style="margin:0"><div class="ct">Canal Direto — meta 65%</div><div class="cb">De 61,5% para 65% em 5 anos. Cada ponto percentual vale ~€130K de margem anual.</div></div>
+      <div class="cal G" style="margin:0"><div class="ct">Google Ads — ROAS 22,7×</div><div class="cb">Top 1% hotelaria de luxo europeia. Escalar com estrutura e mercados certos.</div></div>
+      <div class="cal G" style="margin:0"><div class="ct">F&B — 6 Outlets como destinos</div><div class="cb">Coral · Raízes · Gaivotas · A-Costa · Vento · Trattoria Pantaleone</div></div>
+      <div class="cal G" style="margin:0"><div class="ct">Forbes ★ 2028 · LHW 2030</div><div class="cb">Certificações que abrem distribuição premium global e elevam o ADR.</div></div>
     </div>
   </div>
 </div>
@@ -333,42 +437,42 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 <!-- DIAGNÓSTICO -->
 <div class="pg" id="p-diag">
 <div class="ph" data-bg="Diagnóstico">
-  <div class="pey">P&L · OTB · STR · Feeder Markets · Dados Confirmados</div>
+  <div class="pey">P&L · OTB · STR · Feeder Markets</div>
   <h2 class="pt">Diagnóstico <em>Estratégico</em></h2>
-  <p class="px">2025 Final €10.555.947. Budget 2026 €11.941.356. OTB 4 Maio €7.207.373. STR 2025 vs Comp Set. Feeder markets confirmados. Base factual do plano.</p>
+  <p class="px">Dados reais confirmados: 2025 Final €10.555.947 · Budget 2026 €11.941.356 · OTB 4 Maio €7.207.373. STR vs Comp Set. Feeder markets Nov–Abr.</p>
   <div class="prl"></div>
 </div>
 <div class="pb">
-  <div class="sl">Evolução histórica — dados confirmados</div>
+  <div class="sl">Evolução — dados confirmados</div>
   <div class="tw"><table>
-    <thead><tr><th>Ano</th><th>Revenue Total</th><th>ADR</th><th>Rm Nts</th><th>Direto €</th><th>% Direto</th><th>ADR Direto</th><th>Res. Azora ADR</th></tr></thead>
+    <thead><tr><th>Ano</th><th>Revenue</th><th>ADR</th><th>Rm Nts</th><th>Direto €</th><th>% Direto</th><th>ADR Direto</th><th>Res. Azora ADR</th></tr></thead>
     <tbody>
-      <tr><td>2024 Final</td><td>€10.263.538</td><td>€449,52</td><td>22.832</td><td>€6.093.556</td><td>59,4%</td><td>€496,71</td><td>€991,99</td></tr>
-      <tr class="bo"><td>2025 Final</td><td>€10.555.947</td><td>€491,13</td><td>21.493</td><td>€6.488.990</td><td>61,5%</td><td>€528,51</td><td>€1.047,05</td></tr>
+      <tr><td>2024</td><td>€10.263.538</td><td>€449,52</td><td>22.832</td><td>€6.093.556</td><td>59,4%</td><td>€496,71</td><td>€991,99</td></tr>
+      <tr class="bo"><td>2025</td><td>€10.555.947</td><td>€491,13</td><td>21.493</td><td>€6.488.990</td><td>61,5%</td><td>€528,51</td><td>€1.047,05</td></tr>
       <tr class="rd"><td>2026 Budget</td><td>€11.941.356</td><td>€490,08</td><td>24.366</td><td>€7.500.049</td><td>62,8%</td><td>€533,09</td><td>€1.026,90</td></tr>
-      <tr class="go"><td>OTB 4 Mai 2026</td><td>€7.207.373*</td><td>€449,11</td><td>16.048*</td><td>€3.817.512*</td><td>47,6%*</td><td>€499,41</td><td>€1.023,56</td></tr>
+      <tr class="go"><td>OTB 4 Mai</td><td>€7.207.373*</td><td>€449,11</td><td>16.048*</td><td>€3.817.512*</td><td>47,6%*</td><td>€499,41</td><td>€1.023,56</td></tr>
     </tbody>
   </table></div>
-  <p style="font-size:9.5px;color:var(--i4);margin-top:3px">*OTB parcial — faltam 8.318 rm nts e €4.734K para fechar o budget. Pickup actual: ~725 rm nts/semana.</p>
+  <p style="font-size:9.5px;color:var(--i4);margin-top:3px">*OTB parcial — faltam 8.318 rm nts e €4.734K para fechar o budget</p>
 
   <hr class="rule gold">
   <div class="kg k2" style="gap:20px">
     <div>
-      <div class="sl">P&L Março 2026 — dados reais</div>
+      <div class="sl">P&L Março 2026 — linha a linha</div>
       <div class="kg k2">
-        <div class="kc lt R"><div class="kl">Revenue Total</div><div class="kv dn">−5,8%</div><div class="kd">€581.412 vs Budget €617.070</div></div>
-        <div class="kc lt E"><div class="kl">Ocupação</div><div class="kv up">46,4%</div><div class="kd">vs Budget 42,3% (+4,1pp) ✓</div></div>
-        <div class="kc lt R"><div class="kl">ADR Março</div><div class="kv dn">€178,22</div><div class="kd">vs Budget €204,84 (−13%)</div></div>
-        <div class="kc lt R"><div class="kl">RevPAR</div><div class="kv dn">€77,50</div><div class="kd">vs Budget €93,40 (−17%)</div></div>
-        <div class="kc lt E"><div class="kl">Breakfast Board</div><div class="kv up">+10,9%</div><div class="kd">€76.207 vs Budget €68.713 ✓</div></div>
-        <div class="kc lt R"><div class="kl">F&B Restaurantes</div><div class="kv dn">−16,8%</div><div class="kd">€116.222 vs Budget €139.754</div></div>
-        <div class="kc lt R"><div class="kl">Spa &amp; Thalasso</div><div class="kv dn">−14,1%</div><div class="kd">€42.922 vs Budget €49.980</div></div>
-        <div class="kc lt R"><div class="kl">ODD &amp; Experiências</div><div class="kv dn">−55%</div><div class="kd">€7.210 vs Budget €16.008</div></div>
+        <div class="kc R"><div class="kl">Revenue Total</div><div class="kv dn">−5,8%</div><div class="kd">€581.412 vs Budget €617.070</div></div>
+        <div class="kc E"><div class="kl">Ocupação</div><div class="kv up">46,4%</div><div class="kd">vs Budget 42,3% (+4,1pp) ✓</div></div>
+        <div class="kc R"><div class="kl">ADR Março</div><div class="kv dn">€178,22</div><div class="kd">vs Budget €204,84 (−13%)</div></div>
+        <div class="kc R"><div class="kl">RevPAR</div><div class="kv dn">€77,50</div><div class="kd">vs Budget €93,40 (−17%)</div></div>
+        <div class="kc E"><div class="kl">Breakfast Board</div><div class="kv up">+10,9%</div><div class="kd">€76.207 vs Budget €68.713 ✓</div></div>
+        <div class="kc R"><div class="kl">F&B Restaurantes</div><div class="kv dn">−16,8%</div><div class="kd">€116.222 vs Budget €139.754</div></div>
+        <div class="kc R"><div class="kl">Spa &amp; Thalasso</div><div class="kv dn">−14,1%</div><div class="kd">€42.922 vs Budget €49.980</div></div>
+        <div class="kc R"><div class="kl">ODD &amp; Experiências</div><div class="kv dn">−55%</div><div class="kd">€7.210 vs Budget €16.008</div></div>
       </div>
-      <div class="ins" style="margin-top:12px"><div class="inh">Leitura de marketing</div><ul class="inl">
-        <li>O ADR em Março (€178 vs budget €205) é o sinal de alerta central — não a ocupação, que supera o budget em +4,1pp</li>
-        <li>F&B e ODD abaixo do budget por ausência de comunicação activa pré-estadia — não por falta de produto</li>
-        <li>Breakfast Board acima do budget (+10,9%) porque é pré-reservado e comunicado. É o modelo a replicar nos outros outlets</li>
+      <div class="ins" style="margin-top:12px"><div class="inh">Leitura</div><ul class="inl">
+        <li>ADR em Março (€178 vs Budget €205): o gap de revenue não vem de falta de ocupação — vem de preço</li>
+        <li>Breakfast Board acima do budget porque é pré-reservado: o modelo a replicar em F&B e experiências</li>
+        <li>ODD e Spa em gap por ausência de comunicação pré-estadia estruturada — não por falta de produto</li>
       </ul></div>
     </div>
     <div>
@@ -377,42 +481,40 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
         <div class="gi"><div class="gv">84,2%</div><div class="gl2">Occ. Julho</div><div class="grk bad">5.º de 5</div></div>
         <div class="gi"><div class="gv">85,1%</div><div class="gl2">Occ. Agosto</div><div class="grk bad">5.º de 5</div></div>
         <div class="gi"><div class="gv">77,8%</div><div class="gl2">Occ. Set.</div><div class="grk bad">5.º de 5</div></div>
-        <div class="gi"><div class="gv">€680</div><div class="gl2">ADR Agosto</div><div class="grk good">Acima comp (€644)</div></div>
+        <div class="gi"><div class="gv">€680</div><div class="gl2">ADR Agosto</div><div class="grk good">Acima comp €644</div></div>
         <div class="gi"><div class="gv">€637</div><div class="gl2">ADR Julho</div><div class="grk ok">3.º de 5</div></div>
       </div>
-      <div class="ins" style="margin-top:10px"><div class="inh">Implicação estratégica</div><ul class="inl">
-        <li>O produto é premium — ADR Agosto €680 supera o comp set (€644, ARI 105,6)</li>
-        <li>A distribuição é insuficiente — MPI 91,4 em Agosto: 5.º de 5 em ocupação</li>
-        <li>Gap = 200–300 rm nts/mês não vendidas em pico = €140–200K/mês de revenue não gerado</li>
-        <li>Solução: distribuição mais ampla, lead time mais longo, e conversão melhor — não redução de preço</li>
+      <div class="ins" style="margin-top:10px"><div class="inh">Implicação</div><ul class="inl">
+        <li>ADR Agosto €680 supera o comp set (€644, ARI 105,6) — o produto justifica o preço</li>
+        <li>Ocupação em 5.º de 5 nos 3 meses de pico: gap de 200–300 rm nts/mês = €140–200K/mês</li>
+        <li>A alavanca não é redução de preço — é distribuição mais ampla e lead time mais longo</li>
       </ul></div>
-      <div class="sl" style="margin-top:20px">OTB por canal vs Budget (4 Maio)</div>
+      <div class="sl" style="margin-top:18px">OTB por canal (4 Maio)</div>
       <div class="tw"><table>
         <thead><tr><th>Canal</th><th>OTB Rn</th><th>BGT Rn</th><th>% BGT</th><th>Gap €</th></tr></thead>
         <tbody>
           <tr class="bo"><td>TOTAL</td><td>16.048</td><td>24.366</td><td class="dn">65,9%</td><td class="dn">−€4.733.983</td></tr>
           <tr class="rd"><td>DIRETO</td><td>7.644</td><td>14.069</td><td class="dn">54,3%</td><td class="dn">−€3.682.537</td></tr>
-          <tr><td>Online (OTA)</td><td>4.306</td><td>4.502</td><td>95,6%</td><td class="dn">−€218.263</td></tr>
+          <tr><td>Online OTA</td><td>4.306</td><td>4.502</td><td>95,6%</td><td class="dn">−€218.263</td></tr>
           <tr><td>Offline</td><td>3.673</td><td>5.294</td><td class="dn">69,4%</td><td class="dn">−€812.723</td></tr>
           <tr class="go"><td>Residences Direto</td><td>694</td><td>1.343</td><td class="dn">51,7%</td><td class="dn">−€646.770</td></tr>
         </tbody>
       </table></div>
     </div>
   </div>
-
   <hr class="rule gold">
-  <div class="sl">Top feeder markets — acum. Nov–Abr</div>
+  <div class="sl">Top feeder markets — Acum. Nov–Abr 2025/26</div>
   <div class="tw"><table>
-    <thead><tr><th>Mercado</th><th>2025 rn</th><th>2026 rn</th><th>Δ YoY</th><th>Papel estratégico</th></tr></thead>
+    <thead><tr><th>Mercado</th><th>2025 rn</th><th>2026 rn</th><th>Δ YoY</th><th>Papel</th></tr></thead>
     <tbody>
-      <tr class="go"><td>🇺🇸 EUA</td><td>1.905</td><td>2.364</td><td class="up">+24,1%</td><td>Motor principal · CPA €55 · ADR ~€600</td></tr>
-      <tr class="go"><td>🇬🇧 UK</td><td>793</td><td>1.696</td><td class="up">+113,9%</td><td>Crescimento disruptivo · escalar agora</td></tr>
-      <tr><td>🇩🇪 Alemanha</td><td>681</td><td>1.077</td><td class="up">+58,1%</td><td>Wellness fit · manter e aprofundar</td></tr>
+      <tr class="go"><td>🇺🇸 EUA</td><td>1.905</td><td>2.364</td><td class="up">+24,1%</td><td>Motor principal · CPA ~€55 · ADR ~€600</td></tr>
+      <tr class="go"><td>🇬🇧 UK</td><td>793</td><td>1.696</td><td class="up">+113,9%</td><td>Crescimento disruptivo · ampliar investimento</td></tr>
+      <tr><td>🇩🇪 Alemanha</td><td>681</td><td>1.077</td><td class="up">+58,1%</td><td>Wellness fit · Thalasso messaging</td></tr>
       <tr><td>🇨🇭 Suíça</td><td>697</td><td>812</td><td class="up">+16,5%</td><td>Alta qualidade · Residences + Thalasso</td></tr>
       <tr class="go"><td>🇨🇦 Canadá</td><td>117</td><td>379</td><td class="up">+223,9%</td><td>Emergente · CPA similar EUA · escalar</td></tr>
       <tr><td>🇫🇷 França</td><td>262</td><td>395</td><td class="up">+50,8%</td><td>Gastronomia · manter</td></tr>
-      <tr><td>🇳🇱 Países Baixos</td><td>187</td><td>403</td><td class="up">+115,5%</td><td>Crescimento inesperado · investigar e capitalizar</td></tr>
-      <tr><td>🇵🇹 Portugal</td><td>302</td><td>439</td><td class="up">+45%</td><td>CPA €388 · margem ≈€0 · brand search only</td></tr>
+      <tr><td>🇳🇱 Países Baixos</td><td>187</td><td>403</td><td class="up">+115,5%</td><td>Crescimento inesperado · investigar</td></tr>
+      <tr class="rd"><td>🇵🇹 Portugal</td><td>302</td><td>439</td><td class="up">+45%</td><td>CPA ~€388 · margem ≈€0 · brand search only</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -420,48 +522,37 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 
 <!-- CANAL DIRETO -->
 <div class="pg" id="p-direto">
-<div class="dark-section">
-  <div class="pey">O Principal Ativo Estratégico do Hotel</div>
-  <h2 class="pt" style="color:#fff">Canal <em>Direto</em></h2>
-  <p class="px" style="color:rgba(255,255,255,.44)">De 61,5% para 65% de mix direto em 5 anos. Cada ponto percentual vale €130K de margem anual. O canal direto não é apenas um canal de distribuição — é o instrumento de controlo de dados, pricing e relação com o hóspede.</p>
-  <div style="width:34px;height:1px;background:var(--g);margin:13px 0"></div>
+<div class="dk-section">
+  <div class="pey">Distribuição · Margem · Dados · Pricing</div>
+  <h2 class="pt" style="color:var(--W)">Canal <em>Direto</em></h2>
+  <p class="px" style="color:rgba(227,222,207,.44)">De 61,5% para 65% de mix direto em 5 anos. Cada ponto percentual de migração OTA→direto vale ~€130K de margem anual. Meta 2026: fechar o gap de €3.682K.</p>
+  <div style="width:34px;height:1px;background:var(--H2);margin:13px 0"></div>
 </div>
-<div style="background:var(--dk2);padding:0 60px 40px">
-  <div class="kg k4" style="padding-top:30px">
-    <div class="kc G"><div class="kl">ADR Direto 2025</div><div class="kv">€528,51</div><div class="kd">+26% vs OTA · margem máxima</div></div>
-    <div class="kc G"><div class="kl">ADR Direto Budget 2026</div><div class="kv">€533,09</div><div class="kd">Target · Residences: €1.110 direto</div></div>
-    <div class="kc R"><div class="kl">OTB Direto 4 Mai</div><div class="kv">€3.817.512</div><div class="kd">7.644 rn · gap €3.682K vs budget</div></div>
-    <div class="kc"><div class="kl">Gap Direto para Budget</div><div class="kv">6.425 rn</div><div class="kd">54,3% do budget direto por fechar</div></div>
+<div class="dk-section dk" style="padding-top:8px">
+  <div class="kg k4">
+    <div class="kdc G"><div class="kl">ADR Direto 2025</div><div class="kv">€528,51</div><div class="kd">+26% vs OTA · margem máxima</div></div>
+    <div class="kdc G"><div class="kl">ADR Direto Budget 26</div><div class="kv">€533,09</div><div class="kd">Residences direto: €1.110</div></div>
+    <div class="kdc"><div class="kl">OTB Direto 4 Mai</div><div class="kv">€3.817.512</div><div class="kd">7.644 rn · gap €3.682K vs budget</div></div>
+    <div class="kdc"><div class="kl">Gap Direto</div><div class="kv">6.425 rn</div><div class="kd">54,3% do budget direto por fechar</div></div>
   </div>
-
   <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Por que o canal direto define a margem do hotel</div>
-  <div class="kg k3" style="margin-top:10px">
-    <div class="cal D"><div class="ct">Uma reserva OTA a €490/noite gera €392 líquido</div><div class="cb">Comissão média OTA: 18–20%. Com 8.000 rn/ano via OTA, o hotel paga €745–840K em comissões. Cada 10pp de migração para direto liberta €740K de margem sem alterar o produto.</div></div>
-    <div class="cal D"><div class="ct">O direto dá controlo de dados e first-party data</div><div class="cb">Uma reserva via OTA não gera dados de marketing utilizáveis. Uma reserva directa gera: email, preferências, histórico, data especial, mercado de origem — tudo utilizável para fidelização e remarketing.</div></div>
-    <div class="cal D"><div class="ct">O direto permite defender o ADR sem intermediação</div><div class="cb">Os canais OTA exercem pressão para participação em promoções. O canal direto permite manter pricing integrity e oferecer benefícios de experiência em vez de descontos — protegendo o ADR a longo prazo.</div></div>
-  </div>
-
-  <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Impacto financeiro da evolução do canal direto</div>
-  <div class="tw" style="margin-top:10px"><table>
-    <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Cenário</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Revenue Total</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">% Direto</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Rev Direto</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Comissões OTA est.</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Margem extra vs 2025</th></tr></thead>
+  <div class="sl">Impacto financeiro da evolução do canal direto</div>
+  <div class="tw" style="margin-top:10px"><table class="dktable">
+    <thead><tr><th>Cenário</th><th>Revenue</th><th>% Direto</th><th>Comissões OTA est.</th><th>Margem extra vs 2025</th></tr></thead>
     <tbody>
-      <tr class="dk-row bo"><td>2025 baseline</td><td>€10.555.947</td><td>61,5%</td><td>€6.489K</td><td>~€740K</td><td>—</td></tr>
-      <tr class="dk-row"><td>2026 budget</td><td>€11.941.356</td><td>62,8%</td><td>€7.500K</td><td>~€810K</td><td class="up">+€160K margem</td></tr>
-      <tr class="dk-row"><td>2028 target</td><td>€14M</td><td>63%</td><td>€8.820K</td><td>~€885K</td><td class="up">+€540K margem</td></tr>
-      <tr class="dk-row go"><td>2031 meta</td><td>€16M</td><td>65%</td><td>€10.400K</td><td>~€960K</td><td class="up">+€1.400K margem anual</td></tr>
+      <tr class="bo"><td>2025 baseline</td><td>€10.555.947</td><td>61,5%</td><td>~€740K</td><td>—</td></tr>
+      <tr><td>2026 budget</td><td>€11.941.356</td><td>62,8%</td><td>~€810K</td><td class="up">+€160K</td></tr>
+      <tr><td>2028 target</td><td>€14M</td><td>63%</td><td>~€885K</td><td class="up">+€540K</td></tr>
+      <tr class="go"><td>2031 meta</td><td>€16M</td><td>65%</td><td>~€960K</td><td class="up">+€1.400K anual</td></tr>
     </tbody>
   </table></div>
-
   <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Alavancas de crescimento do canal direto</div>
-  <div class="al" style="margin-top:10px">
-    <div class="ai"><div class="an">01</div><div class="ab"><div class="at">Booking engine optimizado — da maior perda para o maior ganho</div><div class="ax">81% de abandono entre Add-to-Cart e compra. Erros JS em 17,69% das sessões. LCP 4,1s (benchmark: &lt;2,5s). Mobile converte 7,3pp menos que desktop. A correcção técnica do booking engine é a acção de maior ROI disponível: impacto estimado de +€80–120K de revenue direto/ano sem investimento em media.</div><div class="am"><span class="pr cr">Prioridade Máxima</span><span class="tag w">CRO</span><span class="tag w">+€100K est.</span></div></div></div>
-    <div class="ai"><div class="an">02</div><div class="ab"><div class="at">Early bird com benefício de experiência — nunca desconto de preço</div><div class="ax">Substituir o desconto percentual de early bird por um benefício tangível: tratamento Thalasso (€80 custo, €160 valor), jantar no Coral ou Raízes (€65), experiência barco George Ansley. O hóspede antecipa a reserva, o hotel mantém o ADR. Com 1.000 reservas early bird anuais, a diferença vs desconto de 15% vale €70–90K de ADR protegido.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">ADR</span><span class="tag w">Fidelização</span></div></div></div>
-    <div class="ai"><div class="an">03</div><div class="ab"><div class="at">Residences Azora com campanhas dedicadas — gap de €647K sem uma campanha</div><div class="ax">As Residences Azora têm ADR direto de €1.110 — o produto de maior valor do hotel. OTB: 694 rn vs budget 1.343 (52%). Sem uma única campanha dedicada. Budget sugerido: €1.200–1.500/mês em Google Ads (UK, PT, CH) com landing page própria. ROI esperado: ROAS ≥20× dado o ADR do produto.</div><div class="am"><span class="pr cr">Urgente</span><span class="tag w">Residences</span><span class="tag w">Gap €647K</span></div></div></div>
-    <div class="ai"><div class="an">04</div><div class="ab"><div class="at">Exit-intent no booking engine com oferta de valor</div><div class="ax">Quando o utilizador inicia o abandono do booking engine, apresentar uma mensagem não baseada em desconto: "Reserve agora e inclua um Welcome Drink no Vento com vista para o Atlântico." Hotéis que implementam este mecanismo reportam +8–15% de conversão incremental sobre o funil actual.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">CRO</span><span class="tag w">Conversão</span></div></div></div>
-    <div class="ai"><div class="an">05</div><div class="ab"><div class="at">Chat proactivo no booking engine após 90 segundos de inactividade</div><div class="ax">Um chat ao vivo (ou chatbot qualificado) aparece após 90 segundos no booking engine com a pergunta: "Posso ajudar a encontrar a disponibilidade ideal?" Reduz o abandono por dúvida de disponibilidade ou configuração. Implementação de baixo custo, impacto measurável em conversão de sessões longas.</div><div class="am"><span class="pr md">Médio Prazo</span><span class="tag w">CRO</span></div></div></div>
+  <div class="sl">Alavancas de crescimento do canal direto</div>
+  <div class="al dk" style="margin-top:10px">
+    <div class="ai dk"><div class="an">01</div><div class="ab"><div class="at">Booking engine — corrigir erros JS antes de Junho</div><div class="ax">81% abandono entre Add-to-Cart e compra. Erros JS em 17,69% das sessões. LCP 4,1s (benchmark &lt;2,5s). Mobile −7,3pp vs desktop. Impacto estimado da correcção: +€80–120K revenue direto/ano. A janela critica são Julho e Agosto — cada semana de atraso tem custo directo.</div><div class="am"><span class="pr cr">Esta Semana</span><span class="tag w">CRO</span></div></div></div>
+    <div class="ai dk"><div class="an">02</div><div class="ab"><div class="at">Residences Azora — campanha dedicada urgente</div><div class="ax">ADR direto €1.110, 694 OTB vs 1.343 budget (52%). Sem uma campanha dedicada. Budget sugerido: €1.200–1.500/mês em Google Ads (UK, PT, CH) com landing page própria. ROAS esperado ≥20× dado o ADR do produto.</div><div class="am"><span class="pr cr">Urgente</span><span class="tag w">Gap €647K</span></div></div></div>
+    <div class="ai dk"><div class="an">03</div><div class="ab"><div class="at">Early bird com benefício de experiência — nunca desconto de preço</div><div class="ax">Substituir o desconto percentual por um benefício tangível: tratamento Thalasso (€80 custo), jantar no Coral ou Raízes (€65), barco George Ansley. O hóspede antecipa, o hotel mantém o ADR. Com 1.000 reservas early bird anuais, a diferença vs desconto de 15% vale €70–90K de ADR protegido.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">ADR</span></div></div></div>
+    <div class="ai dk"><div class="an">04</div><div class="ab"><div class="at">Exit-intent no booking engine com oferta de valor</div><div class="ax">Quando o utilizador inicia o abandono: proposta de benefício de experiência (Welcome Drink no Vento, acesso ao Thalasso). Nunca desconto — evita criar o padrão de abandono para obter desconto. Hotéis que implementam reportam +8–15% de conversão incremental.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Conversão</span></div></div></div>
   </div>
 </div>
 </div>
@@ -469,178 +560,151 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 <!-- MERCADOS -->
 <div class="pg" id="p-merc">
 <div class="ph" data-bg="Mercados">
-  <div class="pey">Prioritários · Suporte · Reduzir · Lógica de Investimento</div>
+  <div class="pey">Prioritários · Suporte · Reduzir · CPA vs ADR vs Margem</div>
   <h2 class="pt">Estratégia de <em>Mercados</em></h2>
-  <p class="px">Cada mercado com papel estratégico definido, lógica de CPA vs ADR vs margem, e ligação directa à geração de revenue qualificado.</p>
+  <p class="px">Cada mercado com papel estratégico definido e lógica de alocação de budget baseada na rentabilidade real.</p>
   <div class="prl"></div>
 </div>
 <div class="pb">
   <div class="tabs">
-    <button class="tab on" data-tab="tm-pri">Mercados Prioritários</button>
-    <button class="tab" data-tab="tm-sup">Mercados de Suporte</button>
-    <button class="tab" data-tab="tm-red">Mercados a Reduzir</button>
-    <button class="tab" data-tab="tm-mat">Matriz de Rentabilidade</button>
+    <button class="tab on" data-tab="tm-pri">Prioritários</button>
+    <button class="tab" data-tab="tm-sup">Suporte</button>
+    <button class="tab" data-tab="tm-red">Reduzir</button>
+    <button class="tab" data-tab="tm-mat">Matriz</button>
   </div>
-
   <div id="tm-pri" class="tp on">
-    <div class="sl">Mercados prioritários — onde concentrar o investimento</div>
     <div class="al">
-      <div class="ai lt"><div class="an">🇺🇸</div><div class="ab">
-        <div class="at">EUA — Motor Principal · CPA €55 · ADR ~€600 · Margem €545+/reserva</div>
-        <div class="ax">Mercado #1 em volume (2.364 rn YTD, +24,1%) e o mais eficiente em CPA. Cada €1.000 investidos nos EUA geram ~18 reservas com margem €9K+. Hóspedes com maior lead time, estadias mais longas, menor sensibilidade ao preço. Fit natural com o produto premium do Vilalara.</div>
-        <div class="am"><span class="pr hi">Escalar 2026–2028</span><span class="tag">Google Search Brand + Non-brand</span><span class="tag">Virtuoso 2028</span><span class="tag">Amex Centurion pós-Forbes</span></div>
-      </div></div>
-      <div class="ai lt"><div class="an">🇬🇧</div><div class="ab">
-        <div class="at">UK — Crescimento Disruptivo · +113,9% YoY · Acção imediata</div>
-        <div class="ax">De 793 para 1.696 rn acumuladas (Nov–Abr), o UK está a emergir como o segundo mercado mais importante. O crescimento é orgânico e não está a ser amplificado por investimento paid adequado. CPA ~€161 com ADR ~€450 gera margem de €289 por reserva — razoável dado o volume potencial.</div>
-        <div class="am"><span class="pr cr">Ampliar Agora</span><span class="tag">Brand Search reforçada</span><span class="tag">Agentes luxury UK 2027</span></div>
-      </div></div>
-      <div class="ai lt"><div class="an">🇨🇦</div><div class="ab">
-        <div class="at">Canadá — Mercado Emergente · +223,9% YoY · CPA similar EUA</div>
-        <div class="ax">De 117 para 379 rn acumuladas — o mercado com maior crescimento percentual. Toronto, Vancouver e Montreal têm comunidades de alto rendimento com forte propensão para viagens de luxo na Europa. O CPA é comparável ao dos EUA. Sem campanha dedicada em 2026 — gap imediato a corrigir.</div>
-        <div class="am"><span class="pr hi">Campanha Dedicada 2026</span><span class="tag">Brand Search CA</span></div>
-      </div></div>
+      <div class="ai"><div class="an">🇺🇸</div><div class="ab"><div class="at">EUA — Motor Principal · CPA ~€55 · ADR ~€600</div><div class="ax">2.364 rn YTD (+24,1%). Mercado mais eficiente em CPA. Hóspedes com maior lead time, estadias mais longas, menor sensibilidade ao preço. Escalar Google Search Brand + Non-brand. Virtuso e Amex Centurion a partir de 2028 (pós Forbes ★).</div><div class="am"><span class="pr hi">Escalar 2026–28</span><span class="tag">Google Search</span><span class="tag">Virtuoso 2028</span></div></div></div>
+      <div class="ai"><div class="an">🇬🇧</div><div class="ab"><div class="at">UK — Crescimento Disruptivo · +113,9% YoY</div><div class="ax">De 793 para 1.696 rn acumuladas. O segundo mercado mais importante em aceleração sem investimento proporcional. CPA ~€161, ADR ~€450, margem €289. Volume potencial significativo.</div><div class="am"><span class="pr cr">Ampliar Agora</span><span class="tag">Brand Search</span><span class="tag">Agentes Luxury 2027</span></div></div></div>
+      <div class="ai"><div class="an">🇨🇦</div><div class="ab"><div class="at">Canadá — Emergente · +223,9% · CPA similar EUA</div><div class="ax">De 117 para 379 rn. Toronto, Vancouver e Montreal com perfil de alto rendimento. CPA comparável ao EUA. Sem campanha dedicada em 2026 — gap imediato.</div><div class="am"><span class="pr hi">Campanha Dedicada</span><span class="tag">Brand Search CA</span></div></div></div>
     </div>
   </div>
-
   <div id="tm-sup" class="tp">
-    <div class="sl">Mercados de suporte — manter e aprofundar selectivamente</div>
     <div class="al">
-      <div class="ai lt"><div class="an">🇩🇪</div><div class="ab">
-        <div class="at">Alemanha — Wellness Fit Natural · +58,1% · Manter e Aprofundar</div>
-        <div class="ax">1.077 rn YTD com fit natural ao produto Thalasso e Wellness do Vilalara. Hóspedes alemães têm cultura de wellness intensa e alta disposição para pagar por protocolos médico-turísticos. Messaging dedicado ao Thalasso Legacy Programme (2027) pode aumentar significativamente o ADR médio deste segmento.</div>
-        <div class="am"><span class="pr hi">Thalasso Messaging</span><span class="tag">Wellness positioning</span></div>
-      </div></div>
-      <div class="ai lt"><div class="an">🇨🇭</div><div class="ab">
-        <div class="at">Suíça — Alta Qualidade · +16,5% · Residences + Thalasso</div>
-        <div class="ax">812 rn YTD com ADR entre os mais altos do portfolio. Hóspedes suíços têm padrão de consumo similar ao alemão mas com maior disposição para as Residences (ADR €1.110+). Manter com campanhas Residences dedicadas e posicionamento de health & wellness.</div>
-        <div class="am"><span class="pr md">Manter</span><span class="tag">Residences</span><span class="tag">Thalasso</span></div>
-      </div></div>
-      <div class="ai lt"><div class="an">🇫🇷</div><div class="ab">
-        <div class="at">França — Gastronomia · +50,8% · Manter com Ângulo Diferenciado</div>
-        <div class="ax">395 rn YTD com crescimento sólido. O ângulo de captação para França deve ser gastronómico — os Chronicle Dinners, os 6 outlets e o conceito Horta da Terra do Raízes têm forte apelo no mercado francês. Messaging diferenciado da abordagem UK/EUA.</div>
-        <div class="am"><span class="pr md">Manter</span><span class="tag">Gastronomia messaging</span></div>
-      </div></div>
-      <div class="ai lt"><div class="an">🇳🇱</div><div class="ab">
-        <div class="at">Países Baixos — Crescimento Inesperado · +115,5% · Investigar e Capitalizar</div>
-        <div class="ax">403 rn YTD com crescimento de 115,5% — o segundo maior crescimento percentual após Canadá. Sem investimento paid dedicado. Amsterdam e Eindhoven têm comunidades executivas com padrão de consumo próximo da Suíça. CPC mais baixo que UK, potencial elevado. Testar campanha brand em 2027.</div>
-        <div class="am"><span class="pr md">Testar 2027</span><span class="tag">Brand Search NL</span></div>
-      </div></div>
+      <div class="ai"><div class="an">🇩🇪</div><div class="ab"><div class="at">Alemanha · +58,1% · Wellness e Thalasso</div><div class="ax">1.077 rn YTD. Fit natural ao produto Thalasso. Messaging dedicado ao Thalasso Legacy Programme (2027) pode aumentar o ADR médio deste segmento. Manter e aprofundar.</div><div class="am"><span class="pr md">Manter</span><span class="tag">Thalasso messaging</span></div></div></div>
+      <div class="ai"><div class="an">🇨🇭</div><div class="ab"><div class="at">Suíça · +16,5% · Residences + Thalasso</div><div class="ax">812 rn YTD com ADR elevado. Hóspedes suíços têm padrão próximo do alemão com maior disposição para Residences (ADR €1.110+). Manter com campanhas Residences dedicadas.</div><div class="am"><span class="pr md">Manter</span><span class="tag">Residences</span></div></div></div>
+      <div class="ai"><div class="an">🇫🇷</div><div class="ab"><div class="at">França · +50,8% · Gastronomia</div><div class="ax">395 rn YTD. Ângulo de captação: Chronicle Dinners, os 6 outlets e o conceito farm-to-table do Raízes. Messaging diferenciado.</div><div class="am"><span class="pr md">Manter</span><span class="tag">Gastronomia</span></div></div></div>
+      <div class="ai"><div class="an">🇳🇱</div><div class="ab"><div class="at">Países Baixos · +115,5% · Investigar</div><div class="ax">403 rn YTD, crescimento expressivo sem investimento dedicado. CPC mais baixo que UK. Testar campanha brand em 2027.</div><div class="am"><span class="pr md">Testar 2027</span><span class="tag">Brand NL</span></div></div></div>
     </div>
   </div>
-
   <div id="tm-red" class="tp">
-    <div class="sl">Mercados a reduzir — onde o investimento é ineficiente</div>
-    <div class="cal R"><div class="ct">Portugal — CPA €388, margem ≈€0: a decisão mais importante de budget</div><div class="cb">€1.000 investidos em Portugal geram ~2,6 reservas com margem próxima de zero (CPA €388, ADR ~€240, comissão estimada 18%). O mesmo €1.000 nos EUA gera ~18 reservas com €9K+ de margem. A diferença de ROI é de 6–8×. Acção: reduzir Portugal para brand search puro (€800/mês) e realocar a diferença para EUA, UK e Canadá. Impacto estimado: +€150–250K de revenue incremental anual com o mesmo budget total.</div></div>
-    <div class="ins"><div class="inh">Portugal — papel residual correcto</div><ul class="inl">
-      <li>Brand search puro €800/mês: garante visibilidade para quem já procura o hotel por nome</li>
-      <li>F&B e Spa com Google Ads local para captação de externos nos 6 outlets — ROI completamente diferente</li>
-      <li>O mercado doméstico deve ser servido via F&B externo, Spa day-pass e eventos — não via campanhas de quartos</li>
-      <li>Orçamento libertado: €12–15K/ano para realocar para mercados de alta margem</li>
+    <div class="cal R"><div class="ct">Portugal — CPA €388, margem ≈€0</div><div class="cb">€1.000 em Portugal geram ~2,6 reservas com margem próxima de zero (CPA €388, ADR ~€240, comissão 18%). O mesmo €1.000 nos EUA gera ~18 reservas com margem de €9K+. Acção: reduzir Portugal para brand search puro (€800/mês) e realocar a diferença para EUA, UK e Canadá. Impacto estimado: +€150–250K de revenue incremental com o mesmo budget total.</div></div>
+    <div class="ins"><div class="inh">Portugal — papel residual correctamente dimensionado</div><ul class="inl">
+      <li>Brand search puro €800/mês: garante visibilidade para quem procura o hotel por nome</li>
+      <li>F&B e Spa: Google Ads local para captação de clientes externos nos 6 outlets — ROI completamente diferente</li>
+      <li>O mercado doméstico serve-se via F&B, Spa day-pass e eventos — não via campanhas de quartos</li>
+      <li>Budget libertado: €12–15K/ano para realocar para mercados de alta margem</li>
     </ul></div>
   </div>
-
   <div id="tm-mat" class="tp">
-    <div class="sl">Matriz de rentabilidade por mercado</div>
     <div class="tw"><table>
-      <thead><tr><th>Mercado</th><th>CPA Est.</th><th>ADR Est.</th><th>Margem/Reserva</th><th>Vol. 2026 YTD</th><th>Target 2028</th><th>Target 2031</th><th>Prioridade</th></tr></thead>
+      <thead><tr><th>Mercado</th><th>CPA Est.</th><th>ADR Est.</th><th>Margem/Res.</th><th>2026 YTD</th><th>2028 Target</th><th>2031 Target</th><th>Prioridade</th></tr></thead>
       <tbody>
-        <tr class="go"><td>🇺🇸 EUA</td><td>~€55</td><td>~€600</td><td>€545+</td><td>2.364 rn</td><td>3.500 rn</td><td>5.000 rn</td><td>Escalar agressivamente</td></tr>
-        <tr class="go"><td>🇬🇧 UK</td><td>~€161</td><td>~€450</td><td>€289</td><td>1.696 rn</td><td>2.500 rn</td><td>3.500 rn</td><td>Ampliar investimento</td></tr>
-        <tr class="go"><td>🇨🇦 Canadá</td><td>~€70</td><td>~€580</td><td>€510+</td><td>379 rn</td><td>700 rn</td><td>1.200 rn</td><td>Campanha dedicada 2026</td></tr>
-        <tr><td>🇩🇪 Alemanha</td><td>~€120</td><td>~€480</td><td>€360</td><td>1.077 rn</td><td>1.500 rn</td><td>2.000 rn</td><td>Manter · Thalasso messaging</td></tr>
-        <tr><td>🇨🇭 Suíça</td><td>~€115</td><td>~€500</td><td>€385</td><td>812 rn</td><td>1.000 rn</td><td>1.400 rn</td><td>Manter · Residences</td></tr>
-        <tr><td>🇫🇷 França</td><td>~€100</td><td>~€440</td><td>€340</td><td>395 rn</td><td>600 rn</td><td>900 rn</td><td>Manter · gastronomia</td></tr>
+        <tr class="go"><td>🇺🇸 EUA</td><td>~€55</td><td>~€600</td><td>€545+</td><td>2.364 rn</td><td>3.500 rn</td><td>5.000 rn</td><td>Escalar</td></tr>
+        <tr class="go"><td>🇬🇧 UK</td><td>~€161</td><td>~€450</td><td>€289</td><td>1.696 rn</td><td>2.500 rn</td><td>3.500 rn</td><td>Ampliar</td></tr>
+        <tr class="go"><td>🇨🇦 Canadá</td><td>~€70</td><td>~€580</td><td>€510+</td><td>379 rn</td><td>700 rn</td><td>1.200 rn</td><td>Campanha 2026</td></tr>
+        <tr><td>🇩🇪 Alemanha</td><td>~€120</td><td>~€480</td><td>€360</td><td>1.077 rn</td><td>1.500 rn</td><td>2.000 rn</td><td>Manter</td></tr>
+        <tr><td>🇨🇭 Suíça</td><td>~€115</td><td>~€500</td><td>€385</td><td>812 rn</td><td>1.000 rn</td><td>1.400 rn</td><td>Manter</td></tr>
+        <tr><td>🇫🇷 França</td><td>~€100</td><td>~€440</td><td>€340</td><td>395 rn</td><td>600 rn</td><td>900 rn</td><td>Manter</td></tr>
         <tr><td>🇳🇱 NL</td><td>~€80</td><td>~€460</td><td>€380</td><td>403 rn</td><td>600 rn</td><td>900 rn</td><td>Testar 2027</td></tr>
-        <tr><td>🇦🇪 UAE/Golfo</td><td>—</td><td>~€650</td><td>€595</td><td>—</td><td>150 rn</td><td>500 rn</td><td>Entrada 2028 · shoulder</td></tr>
-        <tr class="rd"><td>🇵🇹 Portugal</td><td>~€388</td><td>~€240</td><td>≈€0</td><td>439 rn</td><td>300 rn</td><td>300 rn</td><td>Brand search only €800/mês</td></tr>
+        <tr><td>🇦🇪 UAE/Golfo</td><td>—</td><td>~€650</td><td>€595</td><td>—</td><td>150 rn</td><td>500 rn</td><td>Entrada 2028</td></tr>
+        <tr class="rd"><td>🇵🇹 Portugal</td><td>~€388</td><td>~€240</td><td>≈€0</td><td>439 rn</td><td>300 rn</td><td>300 rn</td><td>Brand only €800/mês</td></tr>
       </tbody>
     </table></div>
   </div>
 </div>
 </div>
-
-<!-- DEMAND GEN -->
-<div class="pg" id="p-demand">
-<div class="dark-section">
-  <div class="pey">Google Ads · Meta Ads · Lógica de Investimento · Por Mercado</div>
-  <h2 class="pt" style="color:#fff">Geração de <em>Procura</em></h2>
-  <p class="px" style="color:rgba(255,255,255,.44)">Onde investir e porquê. Não apenas execução — lógica estratégica de alocação de budget por canal, mercado e momento de funil.</p>
-  <div style="width:34px;height:1px;background:var(--g);margin:13px 0"></div>
+<!-- GOOGLE ADS -->
+<div class="pg" id="p-ads">
+<div class="dk-section">
+  <div class="pey">Performance · Budget · Estrutura · Prioridades</div>
+  <h2 class="pt" style="color:var(--W)">Google <em>Ads</em></h2>
+  <p class="px" style="color:rgba(227,222,207,.44)">ROAS 22,7× em Q1 2026. Dados reais de performance 1–8 Maio 2026 e Budget Pacing Abr–Mai. Estrutura, prioridades e lógica de investimento.</p>
+  <div style="width:34px;height:1px;background:var(--H2);margin:13px 0"></div>
 </div>
-<div style="background:var(--dk2);padding:0 60px 40px">
-  <div class="kg k4" style="padding-top:30px">
-    <div class="kc G"><div class="kl">ROAS Q1 2026</div><div class="kv">22,7×</div><div class="kd">Top 1% hotelaria luxo europeia</div></div>
-    <div class="kc R"><div class="kl">Demand Gen ROAS</div><div class="kv">0,11×</div><div class="kd">€8.412 gasto · €941 revenue — reformular</div></div>
-    <div class="kc"><div class="kl">Budget Paid Media 2026</div><div class="kv">€123.9K</div><div class="kd">Overspend Março: 58,4% do trimestre</div></div>
-    <div class="kc R"><div class="kl">OTB Agosto 4 Mai</div><div class="kv">796 rn</div><div class="kd">vs Budget 3.516 · 23% · Eclipse urgente</div></div>
+<div class="dk-section dk" style="padding-top:8px">
+  <div class="sl">Performance Snapshot — 1 a 8 Maio 2026</div>
+  <div class="kg k4" style="margin-top:10px">
+    <div class="kdc"><div class="kl">Cliques</div><div class="kv">1.910</div><div class="kd">−16,6% vs período anterior</div></div>
+    <div class="kdc"><div class="kl">Impressões</div><div class="kv">10,02M</div><div class="kd">−12,3% vs período anterior</div></div>
+    <div class="kdc E"><div class="kl">CTR</div><div class="kv">19,02%</div><div class="kd">−4,9% · ainda muito acima da média</div></div>
+    <div class="kdc"><div class="kl">Avg. CPC</div><div class="kv">€1,31</div><div class="kd">+1,7% — CPC continua eficiente</div></div>
+    <div class="kdc"><div class="kl">Custo (8 dias)</div><div class="kv">€2.493</div><div class="kd">−15,2% vs período anterior</div></div>
+    <div class="kdc"><div class="kl">Conversões</div><div class="kv">171</div><div class="kd">−8,4% vs período anterior</div></div>
+    <div class="kdc E"><div class="kl">Conv. Value</div><div class="kv">€38.882</div><div class="kd">−40,9% · principal sinal de atenção</div></div>
+    <div class="kdc E"><div class="kl">Cost / Conv.</div><div class="kv">€14,59</div><div class="kd">−7,4% · custo por conversão melhorou</div></div>
   </div>
+  <div class="cal D" style="margin-top:14px"><div class="ct">Conv. Value −40,9%: sinal de atenção — investigar origem</div><div class="cb">O volume de conversões baixou apenas −8,4% mas o valor gerado caiu −40,9%. Isto indica que as conversões actuais têm ticket médio significativamente mais baixo. Possíveis causas: mix de quartos (reservas de quartos base em vez de suites/residences), mercados com ADR mais baixo a converter mais, ou sazonalidade de Maio. Requere análise por segmento de campanha antes de ajustar budget.</div></div>
 
-  <div class="tabs dtabs" style="margin-top:28px">
-    <button class="tab on" data-tab="dg-google">Google Ads</button>
-    <button class="tab" data-tab="dg-meta">Meta Ads</button>
-    <button class="tab" data-tab="dg-logic">Lógica de Investimento</button>
-    <button class="tab" data-tab="dg-calendar">Calendário</button>
+  <hr class="dk">
+  <div class="sl">Budget Pacing — Abr 2026 a 7 Mai 2026</div>
+  <div class="kg k3">
+    <div class="kdc G"><div class="kl">YTD Cost (até 7 Mai)</div><div class="kv">€49.476,50</div><div class="kd">Custo acumulado 2026</div></div>
+    <div class="kdc"><div class="kl">Last 30 Days</div><div class="kv">€11.120,61</div><div class="kd">8 Abr – 7 Mai 2026</div></div>
+    <div class="kdc"><div class="kl">Last 7 Days</div><div class="kv">€2.413,56</div><div class="kd">1–7 Mai 2026</div></div>
   </div>
+  <div class="tw" style="margin-top:12px"><table class="dktable">
+    <thead><tr><th>Mês</th><th>Custo Real</th><th>% do YTD</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr class="rd"><td>Março 2026</td><td>€20.904,31</td><td>42,3%</td><td>Overspend — 42% do YTD num único mês</td></tr>
+      <tr><td>Abril 2026</td><td>€11.205,17</td><td>22,6%</td><td>Normalização após Março</td></tr>
+      <tr class="go"><td>Maio 2026 (parcial)</td><td>€2.493,03</td><td>5,0%</td><td>8 dias · ritmo controlado</td></tr>
+    </tbody>
+  </table></div>
+  <div class="cal D" style="margin-top:8px"><div class="ct">Março representou 42% do custo YTD — acima das melhores práticas</div><div class="cb">Benchmark: nunca concentrar mais de 35–38% do budget trimestral num único mês. O overspend de Março distorce métricas e deixa menos budget para os meses de pico (Junho–Agosto). Implementar hard cap mensal e alerta automático quando o mês excede 38% do budget trimestral.</div></div>
 
-  <div id="dg-google" class="tp on">
-    <div class="sl" style="color:var(--gl)">Google Ads — estrutura e prioridades</div>
-    <div class="al">
-      <div class="ai"><div class="an">01</div><div class="ab"><div class="at">Separar Brand vs Non-Brand — estrutura cirúrgica obrigatória</div><div class="ax">Actualmente brand e non-brand partilham budget e métricas. Separar completamente: Brand com ROAS target 25–30× e budget contido (apenas para defender o nome). Non-Brand com ROAS target 8–12× e budget crescente para captar procura incremental. Esta separação permite escalar non-brand sem distorcer as métricas de brand.</div><div class="am"><span class="pr cr">Implementar Esta Semana</span><span class="tag w">Estrutura</span></div></div></div>
-      <div class="ai"><div class="an">02</div><div class="ab"><div class="at">Campanha Eclipse 12 Agosto — janela fecha em Junho</div><div class="ax">ADR Agosto OTB: €766 — €47 ACIMA do budget (€719). A procura existe e paga o preço. O problema é visibilidade. Landing page dedicada "Eclipse Algarve 12 Agosto" + Search ("eclipse algarve 2026 hotel") + Meta EUA/UK. Budget extra €2.500. Actuar agora: a janela de decisão para Agosto fecha em meados de Junho.</div><div class="am"><span class="pr cr">Esta Semana</span><span class="tag w">Agosto</span><span class="tag w">Gap €1.9M</span></div></div></div>
-      <div class="ai"><div class="an">03</div><div class="ab"><div class="at">Reformular Demand Gen — ROAS 0,11× é inaceitável</div><div class="ax">€8.412 gastos em Q1 2026 geraram €941 de revenue (ROAS 0,11×). A campanha não deve ser removida — deve ser reformulada. Novos criativos de vídeo 15–30s (falésia, Thalasso, Chronicle Dinners). Segmentação por custom intent: "luxury hotel algarve", "wellness retreat portugal". Objectivo: awareness + micro-conversão, não conversão directa.</div><div class="am"><span class="pr cr">Reformular Já</span><span class="tag w">Demand Gen</span></div></div></div>
-      <div class="ai"><div class="an">04</div><div class="ab"><div class="at">Landing pages por mercado — Quality Score e conversão</div><div class="ax">Uma landing page em inglês para EUA/UK (exclusividade, Eclipse, barco George Ansley), uma em alemão para DE/CH (Thalasso, wellness protocol, saúde), uma em francês para FR (gastronomia, Chronicle Dinners, 6 outlets). Melhora Quality Score, reduz CPC e aumenta a taxa de conversão pós-clique.</div><div class="am"><span class="pr hi">2027</span><span class="tag w">CRO</span><span class="tag w">Quality Score</span></div></div></div>
-      <div class="ai"><div class="an">05</div><div class="ab"><div class="at">Pacing semanal — eliminar o overspend de Março</div><div class="ax">Março 2026: 58,4% do budget trimestral num único mês. Hard caps diários automáticos no Google Ads + alerta semanal se mês exceder 40% do budget trimestral. Dashboard de pacing partilhado com a direcção. O overspend desequilibra as métricas e reduz o ROAS aparente dos meses seguintes.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Controlo</span></div></div></div>
-    </div>
+  <hr class="dk">
+  <div class="sl">Estrutura e prioridades de campanha</div>
+  <div class="tabs dtabs" style="margin-top:10px">
+    <button class="tab on" data-tab="ads-struct">Estrutura</button>
+    <button class="tab" data-tab="ads-pri">Prioridades Imediatas</button>
+    <button class="tab" data-tab="ads-cal">Calendário 2026</button>
+    <button class="tab" data-tab="ads-budget">Budget por Mercado</button>
   </div>
-
-  <div id="dg-meta" class="tp">
-    <div class="sl" style="color:var(--gl)">Meta Ads — upper funnel e UGC como vantagem</div>
-    <div class="al">
-      <div class="ai"><div class="an">01</div><div class="ab"><div class="at">Meta como canal de awareness — não de conversão directa</div><div class="ax">Meta Ads (Instagram + Facebook) posiciona-se como canal de upper-funnel para mercados DE, CH, FR onde o volume de Google Search é mais limitado. Video ads de 15–30s com imagens da falésia, do Thalasso e dos Chronicle Dinners. Objectivo: alcance e tráfego qualificado para landing pages dedicadas. ROAS target: 8–12× (awareness tem ciclo mais longo).</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Awareness</span><span class="tag w">DE · CH · FR</span></div></div></div>
-      <div class="ai"><div class="an">02</div><div class="ab"><div class="at">UGC como criativo pago — CTR 40% superior a estúdio</div><div class="ax">Identificar os melhores conteúdos publicados por hóspedes (com permissão) e usar como criativos pagos. UGC tem CTR 38–45% superior a conteúdo de estúdio em Meta Ads (dados Meta Business 2024). Custo: quase zero. Criar processo mensal de identificação, contacto e licenciamento. Priorizar conteúdos da falésia, do Thalasso e dos eventos gastronómicos.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">UGC</span><span class="tag w">CTR +40%</span></div></div></div>
-      <div class="ai"><div class="an">03</div><div class="ab"><div class="at">Retargeting coordenado Google + Meta</div><div class="ax">Utilizadores que visitaram o booking engine mas não completaram a reserva recebem anúncios coordenados: Google Display com oferta de disponibilidade + Instagram com imagem experiencial. Criativos diferenciados por etapa do funil: quem visitou a página de quartos vê disponibilidade, quem chegou ao checkout vê urgência de datas.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Retargeting</span></div></div></div>
-      <div class="ai"><div class="an">04</div><div class="ab"><div class="at">TikTok EUA — test €500/mês a partir de Q3 2026</div><div class="ax">O mercado americano (+24% YoY, CPA €55, o mais eficiente) é muito activo no TikTok. Vídeos de 15s da falésia, do Thalasso e dos 6 outlets. Não é marketing — é momento capturado. Validação: CTR >1,2% e CPC &lt;€3 → escalar para €2.000/mês em 2027.</div><div class="am"><span class="pr md">Q3 2026</span><span class="tag w">TikTok</span><span class="tag w">EUA</span></div></div></div>
-    </div>
-  </div>
-
-  <div id="dg-logic" class="tp">
-    <div class="sl" style="color:var(--gl)">Lógica de investimento por mercado e canal</div>
-    <div class="tw" style="margin-top:10px"><table>
-      <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Mercado</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Canal</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Budget Rec. 2026</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">ROAS Target</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Objectivo</th></tr></thead>
-      <tbody>
-        <tr class="dk-row go"><td>EUA</td><td>Google Search Brand + Non-brand</td><td>€30–35K/ano</td><td>20×+</td><td>Volume + conversão directa</td></tr>
-        <tr class="dk-row"><td>UK</td><td>Google Search Brand + Meta Awareness</td><td>€20–25K/ano</td><td>15×+</td><td>Ampliar volume crescente</td></tr>
-        <tr class="dk-row go"><td>Canadá</td><td>Google Search Brand (nova)</td><td>€8–10K/ano</td><td>18×+</td><td>Validar e escalar</td></tr>
-        <tr class="dk-row"><td>DE / CH</td><td>Google Search + Meta Wellness</td><td>€18–22K/ano</td><td>12×+</td><td>Thalasso positioning</td></tr>
-        <tr class="dk-row"><td>FR</td><td>Google Search + Meta Gastro</td><td>€8–10K/ano</td><td>12×+</td><td>Gastronomia messaging</td></tr>
-        <tr class="dk-row"><td>Residences</td><td>Google Search dedicado</td><td>€14–18K/ano</td><td>20×+</td><td>ADR €1.110 · gap €647K</td></tr>
-        <tr class="dk-row"><td>Agosto Eclipse</td><td>Google Search + Meta EUA/UK</td><td>€2.500 extra</td><td>15×+</td><td>Fechar gap €1.9M Agosto</td></tr>
-        <tr class="dk-row rd"><td>Portugal</td><td>Brand Search apenas</td><td>€800/mês</td><td>—</td><td>Visibilidade mínima · sem ROI</td></tr>
-      </tbody>
-    </table></div>
-    <div class="dins" style="margin-top:14px"><div class="inh">Princípio de alocação de budget</div><ul class="inl">
-      <li>Não distribuir o budget uniformemente — concentrar onde o CPA é mais baixo e o ADR é mais alto</li>
-      <li>EUA + UK + CA = 60–65% do budget total · DE/CH/FR = 25–28% · Portugal = 5% máximo</li>
-      <li>Pacing: nunca concentrar mais de 40% do budget trimestral num único mês</li>
-      <li>Revisão mensal de alocação — ajustar em função de performance OTB por mercado</li>
+  <div id="ads-struct" class="tp on">
+    <div class="dins"><div class="inh">Princípio fundamental — Brand vs Non-Brand separados</div><ul class="inl">
+      <li>Brand: ROAS target 25–30× · budget contido · apenas para defender o nome vs concorrência</li>
+      <li>Non-Brand: ROAS target 8–12× · budget crescente para captar procura incremental</li>
+      <li>Residences: campanha autónoma com landing page própria · ROAS target ≥20×</li>
+      <li>A mistura de Brand e Non-Brand no mesmo grupo distorce o ROAS reportado e impede optimização cirúrgica</li>
+      <li>Portugal: brand search only €800/mês · sem campanhas de quartos</li>
     </ul></div>
   </div>
-
-  <div id="dg-calendar" class="tp">
-    <div class="sl" style="color:var(--gl)">Calendário de campanhas 2026 — eventos e datas</div>
-    <div class="tw" style="margin-top:10px"><table>
-      <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Mês</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Evento / Argumento</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Canal</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Mercado</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Objectivo</th></tr></thead>
+  <div id="ads-pri" class="tp">
+    <div class="al dk">
+      <div class="ai dk"><div class="an">01</div><div class="ab"><div class="at">Campanha Eclipse 12 Agosto — abrir esta semana</div><div class="ax">Agosto OTB: 796 rn vs Budget 3.516 (23%). ADR OTB €766 — €47 ACIMA do budget (€719). A procura paga o preço; o gap é de visibilidade. Landing page dedicada + Search "eclipse algarve agosto 2026" + Meta EUA/UK. Budget extra: €2.500. A janela fecha em meados de Junho.</div><div class="am"><span class="pr cr">Esta Semana</span><span class="tag w">Gap €1.9M Agosto</span></div></div></div>
+      <div class="ai dk"><div class="an">02</div><div class="ab"><div class="at">Separar Brand vs Non-Brand em todas as campanhas</div><div class="ax">Implementação imediata no Google Ads. Brand com budget reduzido e ROAS target 25–30×. Non-brand com budget crescente para EUA, UK e Canadá. A separação permite escalar non-brand sem canibalizar as métricas de brand e torna o reporting mais rigoroso para a direcção.</div><div class="am"><span class="pr cr">Urgente</span><span class="tag w">Estrutura</span></div></div></div>
+      <div class="ai dk"><div class="an">03</div><div class="ab"><div class="at">Hard cap mensal — máximo 38% do budget trimestral</div><div class="ax">Março gastou €20.904 (42% do YTD). Implementar hard cap diário automático no Google Ads + alerta semanal de pacing. Dashboard de budget partilhado com a direcção. O overspend de pré-época reduz disponibilidade para os meses de maior conversão.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Controlo</span></div></div></div>
+      <div class="ai dk"><div class="an">04</div><div class="ab"><div class="at">Investigar queda de Conv. Value −40,9%</div><div class="ax">Conv. Value caiu −40,9% mas conversões apenas −8,4%. Analisar: mix de campanhas que converteu (brand vs non-brand), mercado de origem das conversões, tipo de quarto reservado. Sem esta análise, ajustes de budget são feitos às cegas.</div><div class="am"><span class="pr hi">Alta</span><span class="tag w">Analytics</span></div></div></div>
+    </div>
+  </div>
+  <div id="ads-cal" class="tp">
+    <div class="tw" style="margin-top:6px"><table class="dktable">
+      <thead><tr><th>Período</th><th>Campanha / Argumento</th><th>Canal</th><th>Mercado</th><th>Objectivo</th></tr></thead>
       <tbody>
-        <tr class="dk-row go"><td>Mai 2026</td><td>60 Years on the Cliffs (23 Mai)</td><td>Meta + Search</td><td>UK · FR · DE</td><td>Awareness + Junho</td></tr>
-        <tr class="dk-row"><td>Jun 2026</td><td>White Night by the Cliffs (5 Jun)</td><td>Meta</td><td>PT · ES</td><td>Trade + local</td></tr>
-        <tr class="dk-row"><td>Jun–Jul 2026</td><td>Santos Populares Vilalara (27 Jun)</td><td>Meta + Search local</td><td>PT · ES</td><td>F&B externo</td></tr>
-        <tr class="dk-row go"><td>Jun–Jul 2026</td><td>Eclipse 12 Agosto — campanha dedicada</td><td>Search + Meta EUA/UK</td><td>EUA · UK</td><td>Fechar Agosto (gap €1.9M)</td></tr>
-        <tr class="dk-row"><td>Jul 2026</td><td>Chronicle Dinners Julho (11 Jul)</td><td>Meta + Email</td><td>UK · DE · FR</td><td>Reservas + awareness gastro</td></tr>
-        <tr class="dk-row go"><td>Ago 2026</td><td>Eclipse 12 Ago + 60 Anos Vilalara</td><td>Search + Meta</td><td>EUA · UK</td><td>Ocupação + PR</td></tr>
-        <tr class="dk-row"><td>Set 2026</td><td>Chronicle Dinners Set (4, 5, 7, 8 Set)</td><td>Meta + Email</td><td>UK · DE · FR</td><td>Gastro awareness + out</td></tr>
-        <tr class="dk-row"><td>Set 2026</td><td>Thalassotherapy Legacy (21–28 Set)</td><td>Search Wellness</td><td>DE · CH · UK</td><td>Spa + shoulder</td></tr>
-        <tr class="dk-row"><td>Out–Nov 2026</td><td>Shoulder push + Weddings pilot</td><td>Search + Meta</td><td>UAE · EUA</td><td>Preencher Oct–Nov</td></tr>
+        <tr class="go"><td>Mai–Jun</td><td>Eclipse 12 Agosto + 60 Anos Vilalara</td><td>Search + Meta</td><td>EUA · UK</td><td>Fechar Agosto (gap €1.9M)</td></tr>
+        <tr><td>Mai</td><td>60 Years on the Cliffs (23 Mai)</td><td>Meta + Search</td><td>UK · FR · DE</td><td>Awareness + Junho</td></tr>
+        <tr><td>Jun</td><td>White Night by the Cliffs (5 Jun)</td><td>Meta</td><td>PT · ES</td><td>Trade + local</td></tr>
+        <tr><td>Jun–Jul</td><td>Residences Azora — campanha dedicada</td><td>Search dedicado</td><td>UK · PT · CH</td><td>Gap €647K Residences</td></tr>
+        <tr><td>Jul</td><td>Chronicle Dinners Julho (11 Jul)</td><td>Search + Email</td><td>UK · DE · FR</td><td>F&B awareness</td></tr>
+        <tr><td>Set</td><td>Chronicle Dinners (4, 5, 7, 8 Set)</td><td>Meta + Email</td><td>UK · DE · FR</td><td>Gastronomia + Out/Nov</td></tr>
+        <tr><td>Set</td><td>Thalasso Legacy Week (21–28 Set)</td><td>Search Wellness</td><td>DE · CH · UK</td><td>Spa + shoulder</td></tr>
+        <tr><td>Out–Nov</td><td>Shoulder push + MICE + Weddings pilot</td><td>Search + Meta</td><td>UAE · EUA</td><td>Preencher Oct–Nov</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div id="ads-budget" class="tp">
+    <div class="tw" style="margin-top:6px"><table class="dktable">
+      <thead><tr><th>Mercado / Campanha</th><th>Budget Rec. 2026</th><th>ROAS Target</th><th>Canal</th><th>Objectivo</th></tr></thead>
+      <tbody>
+        <tr class="go"><td>EUA</td><td>€30–35K/ano</td><td>20×+</td><td>Search Brand + Non-brand</td><td>Volume + conversão</td></tr>
+        <tr class="go"><td>UK</td><td>€20–25K/ano</td><td>15×+</td><td>Search Brand + Meta</td><td>Ampliar volume</td></tr>
+        <tr class="go"><td>Canadá</td><td>€8–10K/ano</td><td>18×+</td><td>Search Brand (nova)</td><td>Validar e escalar</td></tr>
+        <tr><td>DE / CH</td><td>€18–22K/ano</td><td>12×+</td><td>Search + Meta Wellness</td><td>Thalasso positioning</td></tr>
+        <tr><td>FR</td><td>€8–10K/ano</td><td>12×+</td><td>Search + Meta Gastro</td><td>Gastronomia messaging</td></tr>
+        <tr><td>Residences</td><td>€14–18K/ano</td><td>20×+</td><td>Search dedicado</td><td>ADR €1.110 · gap €647K</td></tr>
+        <tr><td>Eclipse Agosto</td><td>€2.500 extra</td><td>15×+</td><td>Search + Meta EUA/UK</td><td>Gap €1.9M Agosto</td></tr>
+        <tr class="rd"><td>Portugal</td><td>€800/mês</td><td>—</td><td>Brand Search only</td><td>Visibilidade mínima</td></tr>
       </tbody>
     </table></div>
   </div>
@@ -652,78 +716,46 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 <div class="ph" data-bg="Conversão">
   <div class="pey">Booking Engine · Funil · CRM · Automações · Fidelização</div>
   <h2 class="pt">Conversão <em>&amp; CRM</em></h2>
-  <p class="px">Como transformar procura em revenue real. O booking engine e o CRM são a infra-estrutura que converte investimento em margem directa.</p>
+  <p class="px">Da visita ao site até ao hóspede recorrente. Booking engine, automações de ciclo completo e estrutura de fidelização.</p>
   <div class="prl"></div>
 </div>
 <div class="pb">
   <div class="tabs">
     <button class="tab on" data-tab="cv-engine">Booking Engine</button>
-    <button class="tab" data-tab="cv-crm">CRM &amp; Automações</button>
+    <button class="tab" data-tab="cv-auto">Automações</button>
     <button class="tab" data-tab="cv-fid">Fidelização</button>
   </div>
-
   <div id="cv-engine" class="tp on">
     <div class="kg k4">
-      <div class="kc lt R"><div class="kl">Abandono Add-to-Cart</div><div class="kv dn">81%</div><div class="kd">Abandono entre carrinho e compra</div></div>
-      <div class="kc lt R"><div class="kl">LCP Booking Engine</div><div class="kv dn">4,1s</div><div class="kd">Benchmark &lt;2,5s · lentidão crítica</div></div>
-      <div class="kc lt R"><div class="kl">Mobile vs Desktop Conv.</div><div class="kv dn">−7,3pp</div><div class="kd">54,2% do tráfego é mobile</div></div>
-      <div class="kc lt R"><div class="kl">Sessões com Erro JS</div><div class="kv dn">17,69%</div><div class="kd">Bloqueia checkout em ~1/5 sessões</div></div>
+      <div class="kc R"><div class="kl">Abandono checkout</div><div class="kv dn">81%</div><div class="kd">Entre Add-to-Cart e compra</div></div>
+      <div class="kc R"><div class="kl">LCP</div><div class="kv dn">4,1s</div><div class="kd">Benchmark &lt;2,5s · lento</div></div>
+      <div class="kc R"><div class="kl">Mobile vs Desktop</div><div class="kv dn">−7,3pp</div><div class="kd">54,2% do tráfego é mobile</div></div>
+      <div class="kc R"><div class="kl">Sessões com Erro JS</div><div class="kv dn">17,69%</div><div class="kd">Bloqueia checkout em ~1/5 sessões</div></div>
     </div>
-    <div class="cal R" style="margin-top:14px"><div class="ct">O booking engine é o gargalo principal do canal direto</div><div class="cb">Com 81% de abandono e erros em 17,69% das sessões, o booking engine está a desperdiçar o investimento de €123.9K em paid media. A correcção técnica é a acção de maior ROI do plano: impacto estimado de +€80–120K de revenue directo anual sem incremento de budget de media.</div></div>
     <div class="al" style="margin-top:14px">
-      <div class="ai lt"><div class="an">01</div><div class="ab"><div class="at">Eliminar erros JavaScript — event.data.match bloqueia checkout</div><div class="ax">O erro event.data.match é identificável e corrigível. Em 17,69% das sessões, o checkout é interrompido por este erro. Prioridade: resolver antes do início de Junho para não perder o pico de procura para Julho e Agosto. Impacto directamente mensurável em taxa de conversão.</div><div class="am"><span class="pr cr">Esta Semana</span></div></div></div>
-      <div class="ai lt"><div class="an">02</div><div class="ab"><div class="at">LCP 4,1s → &lt;2,5s — cada segundo perdido é revenue perdido</div><div class="ax">Google data: cada segundo adicional de carregamento reduz a conversão em 7%. Com LCP de 4,1s vs benchmark de 2,5s, o hotel está a perder ~11% de conversão só pela velocidade. Optimização de imagens, lazy loading e CDN são as alavancas técnicas prioritárias.</div><div class="am"><span class="pr cr">Urgente</span></div></div></div>
-      <div class="ai lt"><div class="an">03</div><div class="ab"><div class="at">Mobile-first redesign do funil de checkout</div><div class="ax">54,2% do tráfego é mobile mas converte 7,3pp menos que desktop. O formulário de checkout mobile deve ser simplificado: menos campos por ecrã, botão "Book Now" sempre visível em scroll, preenchimento automático habilitado, Apple Pay / Google Pay como opção de pagamento.</div><div class="am"><span class="pr hi">Alta</span></div></div></div>
-      <div class="ai lt"><div class="an">04</div><div class="ab"><div class="at">Exit-intent com benefício de valor — não com desconto</div><div class="ax">Quando o utilizador inicia o abandono: "Reserve agora e inclua um Welcome Drink no Vento com vista para o Atlântico." Nunca desconto — porque o desconto comunicado no exit-intent cria o hábito de abandonar para obter desconto. O benefício de experiência mantém o ADR e cria antecipação.</div><div class="am"><span class="pr hi">Alta</span></div></div></div>
+      <div class="ai"><div class="an">01</div><div class="ab"><div class="at">Eliminar erros JS — correcção antes de Junho</div><div class="ax">O erro event.data.match é identificável e corrigível. Em 17,69% das sessões o checkout é interrompido. Prioridade absoluta: resolver antes de Junho para não perder o pico de procura para Julho/Agosto. Impacto estimado: +€80–120K revenue direto/ano.</div><div class="am"><span class="pr cr">Esta Semana</span></div></div></div>
+      <div class="ai"><div class="an">02</div><div class="ab"><div class="at">LCP 4,1s → &lt;2,5s — cada segundo custa conversão</div><div class="ax">Cada segundo adicional de carregamento reduz a taxa de conversão em ~7% (dados Google). Com LCP de 4,1s, o hotel perde ~11% de conversão só pela velocidade. Optimização de imagens, lazy loading e CDN são as alavancas prioritárias.</div><div class="am"><span class="pr cr">Urgente</span></div></div></div>
+      <div class="ai"><div class="an">03</div><div class="ab"><div class="at">Mobile-first do funil de checkout</div><div class="ax">54,2% do tráfego é mobile. Simplificar o formulário de checkout: menos campos por ecrã, botão Book Now sempre visível em scroll, Apple Pay / Google Pay habilitados. O delta de −7,3pp vs desktop representa um volume significativo de reservas não completadas.</div><div class="am"><span class="pr hi">Alta</span></div></div></div>
+      <div class="ai"><div class="an">04</div><div class="ab"><div class="at">Exit-intent com benefício de experiência</div><div class="ax">Quando o utilizador inicia o abandono: proposta de um benefício (Welcome Drink no Vento, acesso ao jardim Thalasso). Nunca desconto — cria o hábito de abandonar para obter desconto. Hotéis que implementam reportam +8–15% de conversão incremental sobre o funil actual.</div><div class="am"><span class="pr hi">Alta</span></div></div></div>
     </div>
   </div>
-
-  <div id="cv-crm" class="tp">
-    <div class="sl">Automações por momento da jornada do hóspede</div>
-    <div class="tabs" style="margin-top:10px;border-color:var(--gsm)">
-      <button class="tab on" data-tab="cr-pre">Pré-Estadia</button>
-      <button class="tab" data-tab="cr-dur">Durante</button>
-      <button class="tab" data-tab="cr-pos">Pós-Estadia</button>
+  <div id="cv-auto" class="tp">
+    <div class="sl">Sequência automática — ciclo completo</div>
+    <div class="al">
+      <div class="ai"><div class="an">T−7</div><div class="ab"><div class="at">Email de antecipação — outlets, eventos, experiências</div><div class="ax">7 dias antes: evento da semana, os 6 outlets com disponibilidade e link de reserva, as 7 experiências com preço e disponibilidade real. Cada item com acção de reserva imediata. Target: +€18–25 de ancillary revenue por hóspede vs baseline.</div></div></div>
+      <div class="ai"><div class="an">T−3</div><div class="ab"><div class="at">Check-in online + preferências de personalização</div><div class="ax">Link de check-in online, horários de todos os serviços, nome do concierge, e uma questão de personalização que alimenta o CRM e informa o arrival ritual.</div></div></div>
+      <div class="ai"><div class="an">T−1</div><div class="ab"><div class="at">Email de chegada — prático e relevante</div><div class="ax">Meteorologia local, sugestão de roupa, horário de abertura do Coral e Raízes para jantar, e último upsell disponível: upgrade de quarto, slot de Spa, experiência de barco.</div></div></div>
+      <div class="ai"><div class="an">D+2</div><div class="ab"><div class="at">Mid-stay check — capturar insatisfação antes do check-out</div><div class="ax">SMS ou WhatsApp discreto: "Como está a correr a sua estadia?" Um hóspede insatisfeito contactado a tempo não escreve uma review negativa. Um hóspede satisfeito contactado escreve uma review positiva.</div></div></div>
+      <div class="ai"><div class="an">+48h</div><div class="ab"><div class="at">Post-stay — timing da memória emocional</div><div class="ax">A memória emocional de uma estadia está no pico às 48h após partida — não imediatamente. Email com: agradecimento personalizado, link de review Google/TripAdvisor, e proposta de retorno com benefício de experiência (nunca desconto de preço).</div></div></div>
+      <div class="ai"><div class="an">+30d</div><div class="ab"><div class="at">Newsletter editorial mensal — não email promocional</div><div class="ax">O evento do próximo mês, um prato em destaque de um dos 6 outlets, um tratamento Thalasso explicado, uma fotografia da falésia. Target: 38%+ de abertura (benchmark luxury: 28%).</div></div></div>
     </div>
-    <div id="cr-pre" class="tp on">
-      <div class="al">
-        <div class="ai lt"><div class="an">T−7</div><div class="ab"><div class="at">Email de antecipação — evento da semana + 6 outlets com disponibilidade real</div><div class="ax">7 dias antes da chegada: o evento da semana no hotel, os 6 outlets com disponibilidade e link de reserva directa, as 7 experiências disponíveis com preço e disponibilidade. Cada item com botão de reserva imediata (WhatsApp ou booking online). Target: +€18–25 de ancillary revenue por hóspede vs baseline.</div></div></div>
-        <div class="ai lt"><div class="an">T−3</div><div class="ab"><div class="at">Check-in online + personalização da estadia</div><div class="ax">3 dias antes: link de check-in online (reduz fila na chegada), horários de todos os serviços, nome do concierge de serviço, e uma pergunta de personalização: "Prefere quietude ou animação?" A resposta alimenta o CRM e informa o arrival ritual.</div></div></div>
-        <div class="ai lt"><div class="an">T−1</div><div class="ab"><div class="at">Email de chegada — meteorologia, roupa sugerida, última oferta</div><div class="ax">24 horas antes: previsão meteorológica local, sugestão de roupa, horário de abertura do Coral e Raízes para jantar dessa noite, e último upsell: upgrade de quarto disponível, spa slot disponível, experiência de barco amanhã. Urgência real, sem pressão.</div></div></div>
-      </div>
-    </div>
-    <div id="cr-dur" class="tp">
-      <div class="al">
-        <div class="ai lt"><div class="an">D0</div><div class="ab"><div class="at">Arrival ritual personalizado — o primeiro minuto define a relação</div><div class="ax">Com base no perfil CRM: flor de laranjeira para casais, kit de exploração + Vilalara Sense Map para famílias, chá de ervas dos jardins para hóspedes de wellness. Custo marginal: €2–4. Impacto em NPS: mensurável. Mencionado em reviews em 40%+ dos casos quando bem executado.</div></div></div>
-        <div class="ai lt"><div class="an">D1+</div><div class="ab"><div class="at">WhatsApp concierge — disponível 24h, respostas em &lt;5 minutos</div><div class="ax">Um canal de WhatsApp activo durante a estadia para pedidos simples: reserva de mesa nos 6 outlets, pedido de transfer, informação sobre experiências, late check-out. Não substitui a equipa — liberta-a para interacções de alto valor. Target de resposta: &lt;5 minutos. NPS +8 pontos (benchmark implementações similares).</div></div></div>
-        <div class="ai lt"><div class="an">D2</div><div class="ab"><div class="at">Mid-stay check — capturar sinal de insatisfação antes do check-out</div><div class="ax">Um SMS ou WhatsApp discreto ao segundo dia de estadia: "Como está a correr a sua estadia? Há algo que possamos melhorar?" Não é pesquisa — é sinal de cuidado. Um hóspede insatisfeito que é contactado a tempo deixa de escrever uma review negativa. Um hóspede satisfeito contactado escreve uma review positiva.</div></div></div>
-      </div>
-    </div>
-    <div id="cr-pos" class="tp">
-      <div class="al">
-        <div class="ai lt"><div class="an">+48h</div><div class="ab"><div class="at">Post-stay email — timing da memória emocional</div><div class="ax">A memória emocional de uma estadia está no pico às 48h após partida, não imediatamente. Email com: agradecimento personalizado com referência à estadia específica, link de review Google/TripAdvisor (texto simples, sem pressão), e oferta de retorno com benefício de experiência — nunca desconto. Taxa de abertura esperada: 42–55%.</div></div></div>
-        <div class="ai lt"><div class="an">+30 dias</div><div class="ab"><div class="at">Newsletter editorial mensal — manter a relação ativa</div><div class="ax">Não um email de promoções. Uma newsletter que as pessoas querem ler: o evento do próximo mês nos 6 outlets, uma receita do chef do Raízes, um tratamento Thalasso em destaque, uma fotografia da falésia. Design de revista. Target: 38%+ de abertura (benchmark luxury: 28%).</div></div></div>
-        <div class="ai lt"><div class="an">−30 dias</div><div class="ab"><div class="at">Programa de aniversários — 30 dias antes de datas especiais</div><div class="ax">30 dias antes do aniversário de casamento ou nascimento do hóspede, enviar proposta personalizada de estadia comemorativa com pacote dedicado. Conversão esperada: 8–12% das propostas. Com 500 hóspedes na base com datas registadas, isto gera 40–60 reservas incrementais por ano sem custo de aquisição.</div></div></div>
-      </div>
-    </div>
-    <hr class="rule gold" style="margin-top:16px">
-    <div class="sl">CRM preditivo com LTV Scoring — 2027</div>
-    <div class="ins"><div class="inh">O que muda com CRM preditivo</div><ul class="inl">
-      <li>Cada contacto recebe um score de propensão à recompra (0–100) com base em comportamento, frequência e LTV histórico</li>
-      <li>As campanhas de email param de ser enviadas à base inteira — passam a ser enviadas às pessoas certas, no momento certo</li>
-      <li>Conversão de email: de 0,8% actual para 4–5% target. Mesmo volume de envios, 5× mais reservas</li>
-      <li>Segmentos de acção: novos (1 estadia), recorrentes (2–3), fiéis (4+), dormentes (&gt;18 meses sem reserva)</li>
-      <li>Dormentes recebem campanha de reactivação com argumento emocional — não com desconto</li>
-    </ul></div>
   </div>
-
   <div id="cv-fid" class="tp">
-    <div class="sl">Fidelização — o hóspede recorrente é o melhor activo de marketing</div>
-    <div class="cal G"><div class="ct">Um hóspede que voltou 2 vezes tem 68% de probabilidade de voltar pela terceira</div><div class="cb">Dados Bain & Company para hotelaria de luxo: o hóspede recorrente tem custo de aquisição zero, ADR 12–18% superior à primeira visita, e NPS significativamente mais alto. Em 2025, ~15% dos hóspedes são recorrentes. Target 2031: 30%+.</div></div>
+    <div class="cal G"><div class="ct">Hóspede recorrente: custo de aquisição zero, ADR 12–18% superior</div><div class="cb">Dados Bain & Company para hotelaria de luxo. Em 2025, ~15% dos hóspedes são recorrentes. Target 2031: 30%+. A diferença entre estes dois cenários, em revenue e margem, é substancial.</div></div>
     <div class="al" style="margin-top:12px">
-      <div class="ai lt"><div class="an">01</div><div class="ab"><div class="at">Programa curado de recorrentes — sem pontos, sem burocracia</div><div class="ax">Sem loyalty points (demasiado commodity). Um hóspede com 3+ visitas recebe: carta manuscrita do Director na chegada com referência à visita anterior, upgrade automático sem pedido (baseado em disponibilidade), reconhecimento pelo nome por todos os colaboradores antes de chegar (briefing diário de arrivals do CRM). Experiência, não plástico.</div><div class="am"><span class="pr hi">Alta</span><span class="tag">NPS</span></div></div></div>
-      <div class="ai lt"><div class="an">02</div><div class="ab"><div class="at">Vilalara Sense Map — detalhe que cria memória afectiva</div><div class="ax">Mapa físico em papel texturado de qualidade: onde cheira a jasmim ao anoitecer, onde o som do Atlântico é mais puro, onde o pôr-do-sol é mais dramático na falésia, onde a luz de manhã é mais favorável. Não é mapa turístico — é guia sensorial do território. €0,80/unidade. Fotografado e partilhado pelos hóspedes nas redes.</div><div class="am"><span class="pr hi">Alta</span><span class="tag">NPS</span><span class="tag">Social orgânico</span></div></div></div>
-      <div class="ai lt"><div class="an">03</div><div class="ab"><div class="at">Post-stay email com timing preciso — 48h, não imediatamente</div><div class="ax">Erroneamente, a maioria dos hotéis envia o email pós-estadia no próprio dia do check-out. A memória emocional de uma experiência está no pico às 48h — quando o hóspede já voltou à rotina e sente saudade. É esse o momento de pedir a review e propor o regresso. Taxa de conversão de reviews: estimada em 3× superior ao email imediato.</div><div class="am"><span class="pr hi">Alta</span><span class="tag">Reviews</span><span class="tag">Conversão</span></div></div></div>
+      <div class="ai"><div class="an">01</div><div class="ab"><div class="at">Programa de recorrentes — sem pontos, sem plástico</div><div class="ax">Um hóspede com 3+ visitas recebe: carta manuscrita do Director na chegada com referência à visita anterior, upgrade automático sem pedido, reconhecimento pelo nome por todos os colaboradores (briefing diário via CRM). Experiência — não programa de fidelização genérico.</div><div class="am"><span class="pr hi">Alta</span></div></div></div>
+      <div class="ai"><div class="an">02</div><div class="ab"><div class="at">CRM Preditivo com LTV Scoring — 2027</div><div class="ax">Score de propensão à recompra (0–100) para cada contacto. Campanhas enviadas às pessoas certas no momento certo. Conversão de email: de 0,8% actual para 4–5% target. Segmentos: novos, recorrentes, fiéis, dormentes. Cada segmento com sequência diferente.</div><div class="am"><span class="pr md">2027</span></div></div></div>
+      <div class="ai"><div class="an">03</div><div class="ab"><div class="at">Programa de aniversários — 30 dias antes de datas especiais</div><div class="ax">30 dias antes do aniversário de casamento ou nascimento, proposta personalizada de estadia comemorativa. Com 500 hóspedes na base com datas registadas, conversão de 8–12% gera 40–60 reservas incrementais anuais sem custo de aquisição.</div><div class="am"><span class="pr md">Médio Prazo</span></div></div></div>
     </div>
   </div>
 </div>
@@ -731,228 +763,116 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 
 <!-- REVENUE POR HÓSPEDE -->
 <div class="pg" id="p-rev">
-<div class="dark-section">
-  <div class="pey">F&B · Spa · Experiências · Marketing como Driver</div>
-  <h2 class="pt" style="color:#fff">Revenue <em>por Hóspede</em></h2>
-  <p class="px" style="color:rgba(255,255,255,.44)">O Marketing é o driver do revenue extra-quarto. F&B, Spa e Experiências não são departamentos separados — são argumentos de captação, conversão e fidelização que o Marketing comunica e activa.</p>
-  <div style="width:34px;height:1px;background:var(--g);margin:13px 0"></div>
+<div class="dk-section">
+  <div class="pey">F&B · Spa · Experiências · Ancillary Revenue</div>
+  <h2 class="pt" style="color:var(--W)">Revenue <em>por Hóspede</em></h2>
+  <p class="px" style="color:rgba(227,222,207,.44)">TRevPAR — revenue total por quarto disponível, incluindo F&B, Spa e Experiências. O indicador que distingue hotéis de luxo de resorts médios. Target 2031: €600+ vs ~€400 actual estimado.</p>
+  <div style="width:34px;height:1px;background:var(--H2);margin:13px 0"></div>
 </div>
-<div style="background:var(--dk2);padding:0 60px 40px">
-  <div class="kg k4" style="padding-top:30px">
-    <div class="kc R"><div class="kl">Rev/Hóspede Rest. Março</div><div class="kv">€32,43</div><div class="kd">vs Budget €44,46 (−27%) — acção urgente</div></div>
-    <div class="kc G"><div class="kl">Breakfast Board Março</div><div class="kv">+10,9%</div><div class="kd">€76.207 vs Budget €68.713 — modelo a replicar</div></div>
-    <div class="kc R"><div class="kl">ODD &amp; Experiências Março</div><div class="kv">−55%</div><div class="kd">€7.210 vs Budget €16.008 — comunicação</div></div>
-    <div class="kc R"><div class="kl">Spa &amp; Thalasso Março</div><div class="kv">−14,1%</div><div class="kd">€42.922 vs Budget €49.980</div></div>
+<div class="dk-section dk" style="padding-top:8px">
+  <div class="kg k4">
+    <div class="kdc"><div class="kl">Rev/Hóspede Rest. Mar</div><div class="kv">€32,43</div><div class="kd">vs Budget €44,46 (−27%)</div></div>
+    <div class="kdc E"><div class="kl">Breakfast Board Mar</div><div class="kv">+10,9%</div><div class="kd">€76.207 vs Budget €68.713 ✓</div></div>
+    <div class="kdc"><div class="kl">ODD &amp; Experiências Mar</div><div class="kv">−55%</div><div class="kd">€7.210 vs Budget €16.008</div></div>
+    <div class="kdc"><div class="kl">Spa &amp; Thalasso Mar</div><div class="kv">−14,1%</div><div class="kd">€42.922 vs Budget €49.980</div></div>
   </div>
-  <div class="cal D" style="margin-top:14px"><div class="ct">O Breakfast Board supera o budget porque é pré-reservado e comunicado. É o modelo.</div><div class="cb">O produto dos outros outlets existe. A capacidade de os comunicar activamente antes da chegada é o que falta. O F&B e as Experiências ficam aquém do budget por ausência de comunicação pré-estadia — não por falta de qualidade ou produto. A solução é de Marketing, não de operações.</div></div>
-
+  <div class="cal D" style="margin-top:14px"><div class="ct">Breakfast Board acima do budget (+10,9%) porque é pré-reservado. É o modelo a replicar.</div><div class="cb">O Breakfast Board supera o budget porque é comunicado e reservado antes da chegada. Os restantes outlets ficam aquém porque dependem de walk-in ou recomendação informal. A mesma lógica — comunicação estruturada no pré-chegada — aplicada aos 6 outlets e às 7 experiências resolve o gap sem alteração de produto.</div></div>
   <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Os 6 outlets — estratégia de marketing por outlet</div>
+  <div class="sl">Os 6 Outlets — comunicação e revenue</div>
   <div class="og" style="margin-top:12px">
-    <div class="oc">
-      <div class="os" style="background:#B09050"></div>
-      <div class="ob">
-        <div class="on2">Coral</div><div class="osub">Éden do Mar</div>
-        <div class="od">Fine dining mediterrânico com vista directa para o Atlântico. O espaço âncora do hotel para celebrações premium e Chronicle Dinners.</div>
-        <div class="oac">
-          <div class="oa">Chef's Table privado €150–200/pessoa · waitlist como mecanismo de desejo</div>
-          <div class="oa">Chronicle Dinners — transmissão editorial + waitlist pública visível</div>
-          <div class="oa">60 Years Menu 2026: 6 pratos, 6 décadas — irrepetível após 2026</div>
-          <div class="oa">Press trips de gastronomia: Observador, El País Semanal, Der Spiegel</div>
-        </div>
-      </div>
-    </div>
-    <div class="oc">
-      <div class="os" style="background:#2A6A4A"></div>
-      <div class="ob">
-        <div class="on2">Raízes</div><div class="osub">Horta da Terra</div>
-        <div class="od">Farm-to-table verificável. Ingredientes da horta pedagógica do hotel. Cada prato com origem documentada — nome do produtor e distância em km.</div>
-        <div class="oac">
-          <div class="oa">Tour da horta → almoço no Raízes: experiência €45/pessoa · comunicar no T−7</div>
-          <div class="oa">Cartão de storytelling por prato: origem, produtor, método — aumenta ADR percebido</div>
-          <div class="oa">GMB dedicado com fotos da horta + menu sazonal actualizado</div>
-          <div class="oa">SEO: "restaurante farm-to-table algarve" · blog mensal com ingrediente em destaque</div>
-        </div>
-      </div>
-    </div>
-    <div class="oc">
-      <div class="os" style="background:#2A5A8A"></div>
-      <div class="ob">
-        <div class="on2">Gaivotas</div><div class="osub">A Falésia</div>
-        <div class="od">O restaurante com a vista mais dramática. Posicionado para ser um destino externo — "o restaurante na falésia". Captação de não-hóspedes como prioridade.</div>
-        <div class="oac">
-          <div class="oa">Google Ads local €800/mês: "restaurante falésia algarve" — captação externa</div>
-          <div class="oa">Meta Ads regional: Portimão, Lagos, Faro, Albufeira · imagem da vista</div>
-          <div class="oa">Reserva obrigatória: cria escassez e urgência · GMB dedicado</div>
-          <div class="oa">Sunset Dinner Package: mesa + cocktail Welcome no Vento</div>
-        </div>
-      </div>
-    </div>
-    <div class="oc">
-      <div class="os" style="background:#8A5A20"></div>
-      <div class="ob">
-        <div class="on2">A-Costa</div><div class="osub">Mar &amp; Território</div>
-        <div class="od">Casual premium com ingredientes da costa algarvia. O outlet mais acessível — ideal para almoços e refeições informais de alta qualidade.</div>
-        <div class="oac">
-          <div class="oa">Comunicar no T−7 como opção para almoços e snacks informais com qualidade</div>
-          <div class="oa">Menu de petiscos e partilha: maior ticket médio por pax em refeições curtas</div>
-          <div class="oa">Happy Hour exclusiva hóspedes: 17h–19h · snacks locais · tráfego F&B</div>
-          <div class="oa">Integrar no Vilalara Kids Academy como espaço familiar preferencial</div>
-        </div>
-      </div>
-    </div>
-    <div class="oc">
-      <div class="os" style="background:#3A6A8A"></div>
-      <div class="ob">
-        <div class="on2">Vento</div><div class="osub">Bar &amp; Vista</div>
-        <div class="od">Bar com vista para o oceano. O espaço do Sunset Cocktail Ritual diário. Motor de conteúdo orgânico e captação de consumo adicional.</div>
-        <div class="oac">
-          <div class="oa">Sunset Cocktail Ritual: 19h30 diário · gratuito · gera conteúdo orgânico diário</div>
-          <div class="oa">Cocktail assinado mensal com ingrediente algarvio (medronho, alfarroba, mel do hotel)</div>
-          <div class="oa">Cocktail Masterclass €45/pessoa · máx 8 · €1.440/semana adicional</div>
-          <div class="oa">Label "Vento — Vilalara Spirits": produto de retail e take-home</div>
-        </div>
-      </div>
-    </div>
-    <div class="oc">
-      <div class="os" style="background:#8A2A20"></div>
-      <div class="ob">
-        <div class="on2">Trattoria Pantaleone</div><div class="osub">Itália no Algarve</div>
-        <div class="od">Itália com personalidade própria na falésia algarvia. Chronicle Dinners Ricardo × Stefano Bulla agendado para 7 de Setembro.</div>
-        <div class="oac">
-          <div class="oa">Noite Italiana Mensal: menu especial €65–85 · reserva antecipada obrigatória</div>
-          <div class="oa">Chronicle Dinners Set 7 — comunicar com 60 dias de antecedência · waitlist</div>
-          <div class="oa">Pasta making experience: 90min + almoço · €55/pessoa · grupo max 10</div>
-          <div class="oa">GMB dedicado "Trattoria Pantaleone Vilalara" para captação local</div>
-        </div>
-      </div>
-    </div>
+    <div class="oc"><div class="os" style="background:var(--T2)"></div><div class="ob"><div class="on2">Coral</div><div class="osub">Éden do Mar</div><div class="od">Fine dining mediterrânico. Vista directa para o Atlântico. Espaço de celebrações e Chronicle Dinners.</div><div class="oac"><div class="oa">Chef's Table: €150–200/pessoa · waitlist como mecanismo de desejo</div><div class="oa">Chronicle Dinners com transmissão editorial e waitlist pública</div><div class="oa">60 Years Menu 2026: 6 pratos, 6 décadas — irrepetível</div></div></div></div>
+    <div class="oc"><div class="os" style="background:#2A6A4A"></div><div class="ob"><div class="on2">Raízes</div><div class="osub">Horta da Terra</div><div class="od">Farm-to-table verificável. Ingredientes da horta pedagógica. Cada prato com origem documentada.</div><div class="oac"><div class="oa">Tour da horta → almoço: experiência €45/pessoa comunicada no T−7</div><div class="oa">Cartão de storytelling por prato: origem, produtor, distância</div><div class="oa">SEO: "restaurante farm-to-table algarve" · blog mensal</div></div></div></div>
+    <div class="oc"><div class="os" style="background:#2A5A8A"></div><div class="ob"><div class="on2">Gaivotas</div><div class="osub">A Falésia</div><div class="od">A vista mais dramática. Destino externo: "o restaurante na falésia". Captação de não-hóspedes.</div><div class="oac"><div class="oa">Google Ads local €800/mês: "restaurante falésia algarve"</div><div class="oa">Meta Ads regional: Portimão, Lagos, Faro, Albufeira</div><div class="oa">Reserva obrigatória: cria escassez e urgência</div></div></div></div>
+    <div class="oc"><div class="os" style="background:#8A5A20"></div><div class="ob"><div class="on2">A-Costa</div><div class="osub">Mar &amp; Território</div><div class="od">Casual premium. Ideal para almoços e refeições informais de alta qualidade.</div><div class="oac"><div class="oa">Comunicar no T−7 como opção para almoços informais premium</div><div class="oa">Happy Hour hóspedes: 17h–19h · snacks locais</div></div></div></div>
+    <div class="oc"><div class="os" style="background:#3A6A8A"></div><div class="ob"><div class="on2">Vento</div><div class="osub">Bar &amp; Vista</div><div class="od">Bar com vista para o oceano. Sunset Cocktail Ritual diário. Gerador de conteúdo orgânico.</div><div class="oac"><div class="oa">Sunset Cocktail Ritual: 19h30 · gratuito · conteúdo orgânico diário</div><div class="oa">Cocktail Masterclass €45/pessoa · máx 8 · €1.440/semana</div><div class="oa">Label "Vento — Vilalara Spirits": produto de retail</div></div></div></div>
+    <div class="oc"><div class="os" style="background:#8A2A20"></div><div class="ob"><div class="on2">Trattoria Pantaleone</div><div class="osub">Itália no Algarve</div><div class="od">Itália com personalidade própria. Chronicle Dinners Ricardo × Stefano Bulla em 7 Setembro.</div><div class="oac"><div class="oa">Noite Italiana Mensal: menu especial €65–85 · reserva antecipada</div><div class="oa">Chronicle Dinners Set 7 — comunicar com 60 dias antecedência</div><div class="oa">Pasta making experience: 90min + almoço · €55/pessoa</div></div></div></div>
   </div>
-
   <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Spa &amp; Thalasso — o diferenciador inimitável</div>
+  <div class="sl">Spa &amp; Thalasso — produto diferenciador</div>
   <div class="kg k3" style="margin-top:10px">
-    <div class="cal D"><div class="ct">Thalasso Legacy Programme — lançar Q3 2027</div><div class="cb">Pacotes 3/5/7 noites com protocolo médico validado. €1.200–2.800/pessoa. Diagnóstico inicial, programa diário, relatório final. Abre segmento medical wellness — ticket 2× acima do leisure standard. Primeiro produto vendido como programa fechado, não à la carte.</div></div>
-    <div class="cal D"><div class="ct">Algarve Earth Ritual — tratamento exclusivo inimitável</div><div class="cb">Argila da Barrocal, sal marinho, azeite algarvio, ervas dos jardins, mel das colmeias do hotel. Denominação própria, preço premium €120–180. Não disponível em nenhum outro Spa do mundo. Activo de PR garantido e de unicidade absoluta.</div></div>
-    <div class="cal D"><div class="ct">Spa Day-Pass externo — revenue nos dias de semana</div><div class="cb">Day-pass €120–180: circuito de água + 1 tratamento + almoço nos outlets. Para não-hóspedes. Target: 5–8/dia de semana. Cria pipeline de futuros hóspedes que experimentam o produto antes de reservar o hotel — o melhor funil de vendas possível.</div></div>
+    <div class="cal D"><div class="ct">Thalasso Legacy Programme — Q3 2027</div><div class="cb">Pacotes 3/5/7 noites com protocolo médico validado. €1.200–2.800/pessoa. Primeiro produto de Spa vendido como programa fechado — não à la carte. Ticket 2× acima do leisure standard.</div></div>
+    <div class="cal D"><div class="ct">Spa Day-Pass externo — revenue nos dias de semana</div><div class="cb">Day-pass €120–180: circuito de água + 1 tratamento + almoço nos outlets. Para não-hóspedes. Target: 5–8/dia. Cria pipeline de futuros hóspedes.</div></div>
+    <div class="cal D"><div class="ct">Algarve Earth Ritual — exclusivo e inimitável</div><div class="cb">Argila da Barrocal, sal marinho, azeite algarvio, ervas dos jardins. Denominação própria. €120–180. Não disponível noutro Spa. Activo de PR e diferenciação.</div></div>
   </div>
-
   <hr class="dk">
-  <div class="sl" style="color:var(--gl)">Experiências — como activar os €16.008 de budget não capturados</div>
-  <div class="dins"><div class="inh">As 7 experiências existentes e o gap de €−55% vs budget</div><ul class="inl">
-    <li>Da Lota ao Prato com Chef Telmo Pires: €295/pax · transfer + mercado + almoço</li>
-    <li>Rota do Mercado com Chef Telmo Pires: €160/pax · tour guiado + prova de vinhos regionais</li>
-    <li>Da Vinha ao Copo: €160/pax · Quinta dos Sentidos + winemaker + prova</li>
-    <li>Bottle Blending — Crie o Seu Próprio Vinho: €314 (2 pax) · experiência de blending</li>
-    <li>Workshop de Velas Artesanais: €65/pax · criar e levar a própria vela</li>
-    <li>Pintura de Azulejos Tradicionais: €65/pax · tradição portuguesa + peça para casa</li>
-    <li>George Ansley Boat Tour com Piquenique Privado: €770–940 (1–8 pax) · icónico</li>
-  </ul></div>
-  <div class="cal G" style="margin-top:10px"><div class="ct">O produto existe. A comunicação não chega. Acção imediata: pré-chegada com disponibilidade real.</div><div class="cb">Incluir as 7 experiências no email de T−7 com foto, descrição de 2 linhas, preço e link de reserva imediata. Com taxa de conversão de 15–20% dos hóspedes, gera €8–15K de ODD adicional por mês, sem alteração do produto.</div></div>
+  <div class="sl">Chronicle Dinners 2026 — calendário confirmado</div>
+  <div class="tw" style="margin-top:10px"><table class="dktable">
+    <thead><tr><th>Data</th><th>Evento</th><th>Local</th><th>Acção</th></tr></thead>
+    <tbody>
+      <tr><td>23 Mai</td><td>60 Years on the Cliffs</td><td>Gaivotas</td><td>PR + história da família fundadora · comunicar agora</td></tr>
+      <tr><td>17 Jun</td><td>Vilalara × Vila Lisa</td><td>—</td><td>Waitlist pública + Meta Ads local</td></tr>
+      <tr><td>11 Jul</td><td>Coral × Kabuki Under the Pines</td><td>Coral</td><td>Vídeo editorial + Instagram Reels</td></tr>
+      <tr><td>4 Set</td><td>Diogo × Rita Magro (Atlântico)</td><td>Coral</td><td>Press release · jornalistas F&B nacionais</td></tr>
+      <tr><td>5 Set</td><td>Telmo × Alexandre Silva (Fogo)</td><td>Raízes</td><td>Observador / Público · SEO content</td></tr>
+      <tr><td>7 Set</td><td>Ricardo × Stefano Bulla (Mediterrâneo)</td><td>Trattoria</td><td>Crossover PT × IT · media italiana</td></tr>
+      <tr class="go"><td>8 Set</td><td>Festa de Encerramento — Diogo, Telmo, Ricardo + Louis Anjos</td><td>Praça das Rosas</td><td>Evento de PR · trade e media convidados</td></tr>
+    </tbody>
+  </table></div>
 </div>
 </div>
-
 <!-- MARCA -->
 <div class="pg" id="p-marca">
 <div class="ph" data-bg="Marca">
-  <div class="pey">Posicionamento · Diferenciação · Ligação ao Pricing · ADR</div>
+  <div class="pey">Posicionamento · Diferenciação · ADR · Certificações</div>
   <h2 class="pt">Posicionamento <em>&amp; Marca</em></h2>
-  <p class="px">O Vilalara como destino, não como hotel. Diferenciação real vs concorrência. A marca como argumento de pricing que protege e eleva o ADR.</p>
+  <p class="px">O Vilalara como destino, não apenas como hotel. Diferenciação real vs concorrência. Certificações como alavanca de ADR e distribuição premium.</p>
   <div class="prl"></div>
 </div>
 <div class="pb">
   <div class="sl">O que é inimitável no Vilalara</div>
   <div class="bm">
     <div class="bc"><div class="bc-label">Localização</div><div class="bc-val">Falésia sobre o Atlântico com 60 anos de história. Não se constrói uma localização — herda-se.</div></div>
-    <div class="bc"><div class="bc-label">Thalassoterapia</div><div class="bc-val">Água do Atlântico. Protocolo médico. O único resort do Algarve com thalasso de nível médico-turístico.</div></div>
+    <div class="bc"><div class="bc-label">Thalassoterapia com água do Atlântico</div><div class="bc-val">Protocolo médico. O único resort do Algarve com thalasso de nível médico-turístico verificável.</div></div>
     <div class="bc"><div class="bc-label">George Ansley — a narrativa fundadora</div><div class="bc-val">A viagem de barco que descobriu o lugar. Uma origem com nome, história e descendência. Impossível de fabricar.</div></div>
-    <div class="bc"><div class="bc-label">6 Outlets com Identidade Própria</div><div class="bc-val">Coral, Raízes, Gaivotas, A-Costa, Vento, Trattoria Pantaleone. Cada um com conceito, chef e storytelling.</div></div>
-    <div class="bc"><div class="bc-label">Jardins e território</div><div class="bc-val">Horta pedagógica, essências locais, mel das colmeias, alecrim dos jardins. O território integrado no produto.</div></div>
-    <div class="bc"><div class="bc-label">60 anos em 2026</div><div class="bc-val">Um âncora de PR que se usa uma vez. Evento, narrativa, produto, conteúdo — irrepetível após 2026.</div></div>
+    <div class="bc"><div class="bc-label">6 Outlets com identidade própria</div><div class="bc-val">Coral, Raízes, Gaivotas, A-Costa, Vento, Trattoria Pantaleone — cada um com conceito e storytelling.</div></div>
+    <div class="bc"><div class="bc-label">Jardins e território integrados</div><div class="bc-val">Horta pedagógica, mel das colmeias, alecrim e flores nos tratamentos Thalasso. O lugar no produto.</div></div>
+    <div class="bc"><div class="bc-label">60 anos em 2026</div><div class="bc-val">Âncora de PR que se usa uma vez. Evento, narrativa, produto, conteúdo — irrepetível após 2026.</div></div>
   </div>
-
   <hr class="rule gold">
-  <div class="sl">Diferenciação vs concorrência — o que nenhum concorrente tem</div>
+  <div class="sl">Diferenciação vs concorrência directa</div>
   <div class="tw"><table>
     <thead><tr><th>Dimensão</th><th>Vilalara</th><th>Vila Vita Parc</th><th>Conrad Algarve</th><th>Pine Cliffs</th></tr></thead>
     <tbody>
       <tr><td>Thalassoterapia médica</td><td class="go">✓ Água Atlântico</td><td>Spa standard</td><td>Spa standard</td><td>Spa standard</td></tr>
       <tr><td>Narrativa fundadora</td><td class="go">George Ansley · 60 anos</td><td>Grupo Amorim</td><td>Conrad (Hilton)</td><td>Annabelle Hotels</td></tr>
-      <tr><td>F&B com identidade</td><td class="go">6 outlets · conceito próprio</td><td>Vila Joya (1★)</td><td>Yakuza + outros</td><td>Mehrere outlets</td></tr>
+      <tr><td>F&B com identidade</td><td class="go">6 outlets · conceito próprio</td><td>Vila Joya (1★)</td><td>Yakuza + outros</td><td>Múltiplos outlets</td></tr>
       <tr><td>Falésia + vista 180°</td><td class="go">Única localização</td><td>Praia nível inferior</td><td>Golf resort interior</td><td>Falésia sem Thalasso</td></tr>
-      <tr><td>Independente · família</td><td class="go">ADN único</td><td>Grupo familiar</td><td>Cadeia global (Hilton)</td><td>Cadeia regional</td></tr>
+      <tr><td>Independente · família</td><td class="go">ADN único</td><td>Grupo familiar</td><td>Cadeia global Hilton</td><td>Cadeia regional</td></tr>
     </tbody>
   </table></div>
-
   <hr class="rule gold">
-  <div class="sl">A marca como argumento de pricing</div>
-  <div class="kg k3">
-    <div class="kc lt G"><div class="kl">ADR Agosto 2025</div><div class="kv">€680</div><div class="kd">+5,6% acima do Comp Set (€644) · a marca já justifica o preço premium</div></div>
-    <div class="kc lt"><div class="kl">ADR Direto Budget 2026</div><div class="kv">€533</div><div class="kd">vs ADR OTA €421 · +26% · a marca vale mais no canal direto</div></div>
-    <div class="kc lt G"><div class="kl">ADR Residences Direto</div><div class="kv">€1.110</div><div class="kd">2,3× o ADR do hotel standard · premium máximo</div></div>
+  <div class="sl">Certificações — distribuição premium e ADR</div>
+  <div class="kg k4">
+    <div class="kc G"><div class="kl">Q4 2026</div><div class="kv" style="font-size:16px">Auditoria</div><div class="kd" style="margin-top:5px">Forbes Travel Guide: auditoria interna · identificar gaps · plano por departamento</div></div>
+    <div class="kc"><div class="kl">2027</div><div class="kv" style="font-size:16px">Candidatura</div><div class="kd" style="margin-top:5px">Dossier formal Forbes · contacto Virtuoso e Amex Travel · press trips temáticas</div></div>
+    <div class="kc G"><div class="kl">2028</div><div class="kv">Forbes ★</div><div class="kd" style="margin-top:5px">ADR +8–15% (benchmark). Amex Centurion 3,5M cartões. Virtuoso preferred.</div></div>
+    <div class="kc G"><div class="kl">2030</div><div class="kv">LHW</div><div class="kd" style="margin-top:5px">Leading Hotels of the World · 400K+ clientes globais · ILTM Cannes · ADR +18–25%</div></div>
   </div>
-  <div class="ins"><div class="inh">Forbes Travel Guide ★ — o multiplicador de marca</div><ul class="inl">
-    <li>Auditoria interna Q4 2026 → dossier formal 2027 → star obtida 2028</li>
-    <li>Uma estrela Forbes filtra automaticamente nas recomendações Amex Centurion (3,5M cartões) e Virtuoso</li>
-    <li>Impacto em ADR: +8–15% nos 12 meses após certificação (benchmark internacional)</li>
-    <li>Leading Hotels of the World (2030): acesso a 400K+ clientes premium globais + ILTM Cannes</li>
-    <li>Condé Nast Traveller Top 100 (2030): €2–4M em publicidade equivalente por ano</li>
+  <div class="ins" style="margin-top:14px"><div class="inh">Vilalara: The Film — 60 anos como activo de PR</div><ul class="inl">
+    <li>Mini-documentário 5–8 minutos: a descoberta de George Ansley, os 60 anos, os chefs dos 6 outlets, o Thalasso, os jardins</li>
+    <li>Produção profissional — não video de marketing. Editorial de lugar e herança.</li>
+    <li>YouTube como plataforma principal, cortado para Reels e Stories</li>
+    <li>PR value esperado: cobertura em FT How to Spend It, Monocle, CNT quando bem executado e promovido</li>
   </ul></div>
-
-  <hr class="rule gold">
-  <div class="sl">Vilalara: The Film — 60 anos como activo de PR</div>
-  <div class="cal G"><div class="ct">Um mini-documentário de 5–8 minutos sobre a descoberta de George Ansley</div><div class="cb">A viagem de barco, o lugar, os 60 anos, a família fundadora, os chefs actuais, os jardineiros, o Thalasso. Produção profissional — não marketing. YouTube como plataforma principal, cortado para Reels e Stories. PR value: cobertura editorial em Financial Times How to Spend It, Monocle, Condé Nast Traveller quando bem executado e promovido.</div></div>
 </div>
 </div>
 
 <!-- SUSTENTABILIDADE -->
 <div class="pg" id="p-sus">
-<div class="dark-section">
-  <div class="pey">Diferenciação Real · Argumento de Valor Premium · Integrado no Produto</div>
-  <h2 class="pt" style="color:#fff"><em>Sustentabilidade</em></h2>
-  <p class="px" style="color:rgba(255,255,255,.44)">Não linguagem corporativa vazia. Sustentabilidade como factor de diferenciação verificável, argumento de valor para o cliente premium e alavanca de certificações internacionais.</p>
-  <div style="width:34px;height:1px;background:var(--g);margin:13px 0"></div>
+<div class="dk-section">
+  <div class="pey">Diferenciação Verificável · Valor Premium · Certificações</div>
+  <h2 class="pt" style="color:var(--W)"><em>Sustentabilidade</em></h2>
+  <p class="px" style="color:rgba(227,222,207,.44)">Sustentabilidade como factor de diferenciação verificável e argumento de valor para o cliente premium — não linguagem corporativa genérica. Necessária para Forbes, LHW e para manter relevância no segmento premium europeu pós-2028.</p>
+  <div style="width:34px;height:1px;background:var(--H2);margin:13px 0"></div>
 </div>
-<div style="background:var(--dk2);padding:0 60px 40px">
-  <div class="cal D" style="margin-top:28px"><div class="ct">Luxury conscious travellers crescem 22%/ano — o segmento mais representado em EUA, UK e CH</div><div class="cb">Os três principais mercados do Vilalara são exactamente os que mais valorizam e pesquisam sustentabilidade verificável. Hotéis com certificação sustentável auditável têm ADR 12–18% superior ao mercado envolvente (Cornell Hospitality 2024). Sustentabilidade não é custo — é vantagem competitiva e argumento de ADR.</div></div>
-
-  <div class="sg" style="margin-top:16px">
-    <div class="sc">
-      <div class="si">🌊</div>
-      <div class="st2">Vilalara Ocean Pledge</div>
-      <div class="sx2">Por cada reserva directa, €2–3 para conservação da costa algarvia — posidónia, ninhos de tartaruga, limpeza de praias. Parceria com organização auditável. Comunicado no booking flow, no email de confirmação e no quarto. Necessário para Forbes e LHW.</div>
-      <span class="stag">Implementar 2026</span>
-    </div>
-    <div class="sc">
-      <div class="si">🌿</div>
-      <div class="st2">Horta Pedagógica — Farm-to-table Verificável</div>
-      <div class="sx2">Horta visitável com ingredientes dos 6 outlets. Tour diário com o jardineiro ou sous-chef. Liga sustentabilidade, gastronomia e experiência sensorial. Narrativa "da horta ao prato" aplicável ao Coral, Raízes, Gaivotas e A-Costa. Conteúdo autêntico e inimitável.</div>
-      <span class="stag">Implementar 2026</span>
-    </div>
-    <div class="sc">
-      <div class="si">🐝</div>
-      <div class="st2">Mel Vilalara — Colmeia nos Jardins</div>
-      <div class="sx2">Colmeia nos jardins. Mel nos pequenos-almoços e nos tratamentos Thalasso. Label própria "Mel Vilalara" disponível para compra. Argumento de PR genuíno: impossível de replicar por qualquer cadeia hoteleira. Conteúdo orgânico e história de produto.</div>
-      <span class="stag">2027</span>
-    </div>
-    <div class="sc">
-      <div class="si">📋</div>
-      <div class="st2">Relatório de Impacto Anual</div>
-      <div class="sx2">Publicação editorial premium — não PDF corporativo. 24 páginas, qualidade de revista. Impacto ambiental real, fornecedores locais certificados, acções de conservação documentadas. Distribuído a parceiros Forbes, Virtuoso, LHW, jornalistas. Necessário para candidaturas.</div>
-      <span class="stag">Anual a partir de 2027</span>
-    </div>
-    <div class="sc">
-      <div class="si">☀️</div>
-      <div class="st2">Carbon Neutral 2030</div>
-      <div class="sx2">Energia solar, compensação de carbono verificada, fornecimento local documentado. Certificação por organização independente até 2030. Necessário para Leading Hotels of the World e para manter relevância no segmento premium europeu pós-2028.</div>
-      <span class="stag">Meta 2030</span>
-    </div>
-    <div class="sc">
-      <div class="si">🤝</div>
-      <div class="st2">Fornecedores Locais Certificados</div>
-      <div class="sx2">Programa interno de certificação de fornecedores: critérios de proximidade, práticas agrícolas e método de produção. Lista publicada no site e no menu de cada outlet. Reforça narrativa de autenticidade e sustentabilidade verificável — não declarada.</div>
-      <span class="stag">2027</span>
-    </div>
+<div class="dk-section dk" style="padding-top:8px">
+  <div class="sg">
+    <div class="sc"><div class="si">🌊</div><div class="st2">Vilalara Ocean Pledge</div><div class="sx2">Por cada reserva directa, €2–3 para conservação da costa algarvia — posidónia, ninhos de tartaruga, limpeza de praias. Parceria auditável. Comunicado no booking flow, email de confirmação e quarto.</div><span class="stag">2026</span></div>
+    <div class="sc"><div class="si">🌿</div><div class="st2">Horta Pedagógica — Farm-to-Table Real</div><div class="sx2">Horta visitável com ingredientes dos 6 outlets. Tour diário com o jardineiro ou sous-chef. Liga sustentabilidade, gastronomia e experiência sensorial.</div><span class="stag">2026</span></div>
+    <div class="sc"><div class="si">🐝</div><div class="st2">Mel Vilalara — Colmeia nos Jardins</div><div class="sx2">Colmeia nos jardins. Mel nos pequenos-almoços, nos tratamentos Thalasso e nos cocktails do Vento. Label própria disponível para compra. Narrativa de produto autentica.</div><span class="stag">2027</span></div>
+    <div class="sc"><div class="si">📋</div><div class="st2">Relatório de Impacto Anual</div><div class="sx2">Publicação editorial premium — não PDF corporativo. 24 páginas. Impacto real documentado, fornecedores locais certificados. Distribuído a parceiros Forbes, Virtuoso e LHW.</div><span class="stag">Anual · 2027+</span></div>
+    <div class="sc"><div class="si">☀️</div><div class="st2">Carbon Neutral 2030</div><div class="sx2">Energia solar, compensação de carbono verificada, cadeia de fornecimento local documentada. Certificação independente. Necessário para LHW e relevância premium europeia pós-2028.</div><span class="stag">Meta 2030</span></div>
+    <div class="sc"><div class="si">🤝</div><div class="st2">Fornecedores Locais Certificados</div><div class="sx2">Programa de certificação: critérios de proximidade e práticas de produção. Lista publicada no site e no menu de cada outlet. Sustentabilidade verificável — não declarada.</div><span class="stag">2027</span></div>
   </div>
 </div>
 </div>
@@ -960,151 +880,167 @@ hr.gold{border-top-color:var(--gsm);margin:24px 0}
 <!-- FINANCEIRO -->
 <div class="pg" id="p-fin">
 <div class="ph" data-bg="Financeiro">
-  <div class="pey">Revenue · ADR · Canal Direto · Margem · Consequência do Marketing</div>
-  <h2 class="pt">Financeiro <em>Alinhado</em></h2>
-  <p class="px">Os resultados financeiros são a consequência directa da estratégia de Marketing e Canal Direto. Budget 2026: €11.941.356 room revenue.</p>
+  <div class="pey">Revenue · ADR · Canal Direto · Projecções 2026–2031</div>
+  <h2 class="pt">Plano <em>Financeiro</em></h2>
+  <p class="px">Budget 2026 confirmado: €11.941.356 room revenue. Projecções baseadas em dados reais 2024–2025 e lógica de crescimento incremental por canal e mercado.</p>
   <div class="prl"></div>
 </div>
 <div class="pb">
-  <div class="cal G"><div class="ct">⚠ Target 2026: €11.941.356 de Room Revenue — não €10.5M nem estimativas arredondadas</div><div class="cb">Este número é confirmado pelo ficheiro Vilalara Forecast 2026: 24.366 rm nts · ADR €490,08 · Revenue total €11.941.356. Com OTB de €7.207.373 a 4 de Maio, o gap para o budget é de €4.733.983 (39,6%). Com pickup actual de ~725 rn/semana e 7 meses de vendas, o target é alcançável com execução precisa.</div></div>
-
-  <div class="sl">Revenue 2025–2031 — crescimento impulsionado por Marketing</div>
+  <div class="cal G"><div class="ct">⚠ Target 2026: €11.941.356 — confirmado pelo Vilalara Forecast 2026</div><div class="cb">24.366 rm nts · ADR €490,08. Com OTB €7.207.373 a 4 de Maio, o gap é de €4.733.983 (39,6%). Com pickup de ~725 rn/semana e 7 meses de vendas disponíveis, o target é alcançável com execução precisa nas áreas de gap identificadas: direto, Residences e Agosto.</div></div>
+  <div class="sl">Revenue 2025–2031 — projecção</div>
   <div class="rc">
-    <div class="rr"><div class="rl">2025 Real</div><div class="rw"><div class="rf" style="width:66%">€10.555.947 · base confirmada</div></div></div>
-    <div class="rr tgt"><div class="rl">2026 Budget</div><div class="rw"><div class="rf" style="width:74%">€11.941.356 · +13,1% · booking engine + Eclipse + Residences</div></div></div>
-    <div class="rr"><div class="rl">2027 Target</div><div class="rw"><div class="rf" style="width:80%">€12.5–13M · CRM preditivo + RevMgmt dinâmico</div></div></div>
-    <div class="rr"><div class="rl">2028 Target</div><div class="rw"><div class="rf" style="width:87%">€14–14.5M · Forbes ★ + Virtuoso + Weddings</div></div></div>
-    <div class="rr"><div class="rl">2029 Target</div><div class="rw"><div class="rf" style="width:94%">€15–15.5M · IA RevMgmt + Culinary Institute</div></div></div>
-    <div class="rr tgt"><div class="rl">2031 Meta</div><div class="rw"><div class="rf" style="width:100%">€16M+ · LHW + CNT + 70% occ. floor</div></div></div>
+    <div class="rr"><div class="rl">2025 Real</div><div class="rw"><div class="rf" style="width:66%">€10.555.947</div></div></div>
+    <div class="rr tgt"><div class="rl">2026 Budget</div><div class="rw"><div class="rf" style="width:74%">€11.941.356 (+13,1%)</div></div></div>
+    <div class="rr"><div class="rl">2027 Target</div><div class="rw"><div class="rf" style="width:80%">€12.5–13M</div></div></div>
+    <div class="rr"><div class="rl">2028 Target</div><div class="rw"><div class="rf" style="width:87%">€14–14.5M</div></div></div>
+    <div class="rr"><div class="rl">2029 Target</div><div class="rw"><div class="rf" style="width:94%">€15–15.5M</div></div></div>
+    <div class="rr tgt"><div class="rl">2031 Meta</div><div class="rw"><div class="rf" style="width:100%">€16M+</div></div></div>
   </div>
-
   <hr class="rule gold">
-  <div class="sl">A equação da margem — canal direto como alavanca financeira</div>
   <div class="tw"><table>
-    <thead><tr><th>Ano</th><th>Revenue</th><th>ADR</th><th>Rm Nts</th><th>% Direto</th><th>Rev Direto</th><th>ADR Direto</th><th>Comissões OTA est.</th><th>ROAS Paid</th></tr></thead>
+    <thead><tr><th>Ano</th><th>Revenue</th><th>ADR</th><th>Rm Nts</th><th>% Direto</th><th>ADR Direto</th><th>ROAS Ads</th></tr></thead>
     <tbody>
-      <tr class="bo"><td>2025 Real</td><td>€10.555.947</td><td>€491</td><td>21.493</td><td>61,5%</td><td>€6.489K</td><td>€529</td><td>~€740K</td><td>22,7×</td></tr>
-      <tr class="rd"><td>2026 Budget</td><td>€11.941.356</td><td>€490</td><td>24.366</td><td>62,8%</td><td>€7.500K</td><td>€533</td><td>~€810K</td><td>25×</td></tr>
-      <tr><td>2027 Target</td><td>€12.5–13M</td><td>€510+</td><td>~22.500</td><td>63%</td><td>~€7.9M</td><td>€545+</td><td>~€840K</td><td>27×</td></tr>
-      <tr><td>2028 Target</td><td>€14–14.5M</td><td>€545+</td><td>~23.500</td><td>63%</td><td>~€8.8M</td><td>€580+</td><td>~€885K</td><td>30×</td></tr>
-      <tr><td>2029 Target</td><td>€15–15.5M</td><td>€595+</td><td>~24.000</td><td>65%</td><td>~€9.8M</td><td>€620+</td><td>~€930K</td><td>32×</td></tr>
-      <tr class="go"><td>2031 Meta</td><td>€16M+</td><td>€680+</td><td>~24.000</td><td>65%</td><td>~€10.4M</td><td>€700+</td><td>~€960K</td><td>35×</td></tr>
+      <tr class="bo"><td>2025 Real</td><td>€10.555.947</td><td>€491,13</td><td>21.493</td><td>61,5%</td><td>€528,51</td><td>22,7×</td></tr>
+      <tr class="rd"><td>2026 Budget</td><td>€11.941.356</td><td>€490,08</td><td>24.366</td><td>62,8%</td><td>€533,09</td><td>25×</td></tr>
+      <tr><td>2027</td><td>€12.5–13M</td><td>€510+</td><td>~22.500</td><td>63%</td><td>€545+</td><td>27×</td></tr>
+      <tr><td>2028</td><td>€14–14.5M</td><td>€545+</td><td>~23.500</td><td>63%</td><td>€580+</td><td>30×</td></tr>
+      <tr><td>2029</td><td>€15–15.5M</td><td>€595+</td><td>~24.000</td><td>65%</td><td>€620+</td><td>32×</td></tr>
+      <tr class="go"><td>2031 Meta</td><td>€16M+</td><td>€680+</td><td>~24.000</td><td>65%</td><td>€700+</td><td>35×</td></tr>
     </tbody>
   </table></div>
-
-  <div class="ins"><div class="inh">O que significa 65% de canal direto em 2031</div><ul class="inl">
-    <li>Com €16M de revenue e 65% direto: €10.4M de revenue direto vs €6.489K em 2025 — crescimento de 60,3%</li>
-    <li>Comissões OTA poupadas vs. cenário de status quo (61,5% constante): +€1.4M de margem anual</li>
-    <li>ADR direto (€700+) vs ADR OTA (~€530): diferença de €170 por room night · com 15.600 rn directas = €2.65M adicional vs se fossem todas OTA</li>
-    <li>O canal direto é simultaneamente o de maior ADR, maior margem e maior controlo de dados — é o activo estratégico de longo prazo mais valioso do hotel</li>
-  </ul></div>
+  <hr class="rule gold">
+  <div class="sl">Revenue mix 2025 → 2031</div>
+  <div class="tw"><table>
+    <thead><tr><th>Fonte</th><th>2025 Est.</th><th>% Total</th><th>2027</th><th>2031</th><th>Alavanca</th></tr></thead>
+    <tbody>
+      <tr class="bo"><td>Room Revenue Hotel</td><td>€8.168K</td><td>77,4%</td><td>€9.5M</td><td>€12M</td><td>ADR + Ocupação + RevMgmt</td></tr>
+      <tr class="go"><td>Residences Azora</td><td>€1.639K</td><td>15,5%</td><td>€1.9M</td><td>€2.8M</td><td>Volume + campanha dedicada</td></tr>
+      <tr><td>F&B (6 outlets)</td><td>~€1.800K</td><td>17,1%</td><td>€2.2M</td><td>€3M</td><td>Externos + Chronicle Dinners</td></tr>
+      <tr><td>Spa &amp; Thalasso</td><td>~€550K</td><td>5,2%</td><td>€750K</td><td>€1.2M</td><td>Thalasso Legacy + day-pass</td></tr>
+      <tr><td>ODD &amp; Experiências</td><td>~€100K</td><td>0,9%</td><td>€200K</td><td>€600K</td><td>Comunicação pré-chegada</td></tr>
+      <tr><td>MICE &amp; Grupos</td><td>~€22K</td><td>0,2%</td><td>€300K</td><td>€800K</td><td>Produto formalizado · shoulder</td></tr>
+      <tr><td>Weddings (novo)</td><td>—</td><td>—</td><td>—</td><td>€700K</td><td>Launch 2028 · shoulder Oct–Nov</td></tr>
+    </tbody>
+  </table></div>
 </div>
 </div>
 
 <!-- KPIS -->
 <div class="pg" id="p-kpi">
-<div class="dark-section">
-  <div class="pey">Métricas · Targets · Responsáveis · Frequência de Revisão</div>
-  <h2 class="pt" style="color:#fff">KPIs <em>&amp; Performance</em></h2>
-  <p class="px" style="color:rgba(255,255,255,.44)">Estrutura clara e operacional. Cada métrica com número, responsável e frequência. Sem ambiguidade, sem indicadores vazios.</p>
-  <div style="width:34px;height:1px;background:var(--g);margin:13px 0"></div>
+<div class="dk-section">
+  <div class="pey">Métricas · Targets · Responsáveis · Frequência</div>
+  <h2 class="pt" style="color:var(--W)">KPIs <em>&amp; Performance</em></h2>
+  <p class="px" style="color:rgba(227,222,207,.44)">Estrutura operacional clara. Cada métrica com número, responsável e frequência de revisão. Sem ambiguidade.</p>
+  <div style="width:34px;height:1px;background:var(--H2);margin:13px 0"></div>
 </div>
-<div style="background:var(--dk2);padding:0 60px 40px">
-  <div class="sl" style="color:var(--gl);margin-top:28px">KPIs de Marketing — semanais e mensais</div>
-  <div class="tw" style="margin-top:10px"><table>
-    <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">KPI</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2025 Real</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2026 Budget</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2027</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2028</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2031</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Freq.</th></tr></thead>
+<div class="dk-section dk" style="padding-top:8px">
+  <div class="sl">KPIs de Marketing &amp; Digital</div>
+  <div class="tw" style="margin-top:10px"><table class="dktable">
+    <thead><tr><th>KPI</th><th>2025 Real</th><th>2026 Budget</th><th>2027</th><th>2028</th><th>2031</th><th>Freq.</th></tr></thead>
     <tbody>
-      <tr class="dk-row"><td>ROAS Paid Media</td><td>22,7×</td><td>25×</td><td>27×</td><td>30×</td><td class="go">35×</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>CPA EUA</td><td>~€55</td><td>&lt;€55</td><td>&lt;€50</td><td>&lt;€48</td><td class="go">&lt;€45</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>CPA UK</td><td>~€161</td><td>&lt;€150</td><td>&lt;€130</td><td>&lt;€110</td><td class="go">&lt;€90</td><td>Mensal</td></tr>
-      <tr class="dk-row rd"><td>CPA Portugal</td><td>~€388</td><td>Brand only</td><td>Brand only</td><td>Brand only</td><td>Brand only</td><td>Trimestral</td></tr>
-      <tr class="dk-row go"><td>% Canal Direto</td><td>61,5%</td><td>62,8%</td><td>63%</td><td>63%</td><td>65%</td><td>Mensal</td></tr>
-      <tr class="dk-row go"><td>ADR Canal Direto</td><td>€528,51</td><td>€533,09</td><td>€545+</td><td>€580+</td><td>€700+</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>Conv. Booking Engine</td><td>2,56%</td><td>3,5%+</td><td>4%+</td><td>4,5%</td><td>5%</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>Abandono Checkout</td><td>81%</td><td>&lt;70%</td><td>&lt;60%</td><td>&lt;55%</td><td class="go">&lt;45%</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>LCP Booking Engine</td><td>4,1s</td><td>&lt;2,5s</td><td>&lt;2s</td><td>&lt;2s</td><td>&lt;1,8s</td><td>Mensal</td></tr>
+      <tr class="go"><td>ROAS Paid Media</td><td>22,7×</td><td>25×</td><td>27×</td><td>30×</td><td>35×</td><td>Semanal</td></tr>
+      <tr><td>CPA EUA</td><td>~€55</td><td>&lt;€55</td><td>&lt;€50</td><td>&lt;€48</td><td>&lt;€45</td><td>Mensal</td></tr>
+      <tr><td>CPA UK</td><td>~€161</td><td>&lt;€150</td><td>&lt;€130</td><td>&lt;€110</td><td>&lt;€90</td><td>Mensal</td></tr>
+      <tr class="rd"><td>CPA Portugal</td><td>~€388</td><td>Brand only</td><td>Brand only</td><td>Brand only</td><td>Brand only</td><td>Trimestral</td></tr>
+      <tr><td>Conv. Booking Engine</td><td>2,56%</td><td>3,5%+</td><td>4%+</td><td>4,5%</td><td>5%</td><td>Semanal</td></tr>
+      <tr><td>Abandono checkout</td><td>81%</td><td>&lt;70%</td><td>&lt;60%</td><td>&lt;55%</td><td>&lt;45%</td><td>Semanal</td></tr>
+      <tr><td>LCP Booking Engine</td><td>4,1s</td><td>&lt;2,5s</td><td>&lt;2s</td><td>&lt;2s</td><td>&lt;1,8s</td><td>Mensal</td></tr>
+      <tr><td>% Canal Direto</td><td>61,5%</td><td>62,8%</td><td>63%</td><td>63%</td><td>65%</td><td>Mensal</td></tr>
+      <tr><td>ADR Canal Direto</td><td>€528,51</td><td>€533,09</td><td>€545+</td><td>€580+</td><td>€700+</td><td>Semanal</td></tr>
     </tbody>
   </table></div>
-
-  <div class="sl" style="color:var(--gl);margin-top:24px">KPIs de Revenue por Hóspede</div>
-  <div class="tw" style="margin-top:10px"><table>
-    <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">KPI</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2025 Est.</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2026 Budget</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2027</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2031</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Freq.</th></tr></thead>
+  <div class="sl" style="margin-top:24px">KPIs de Revenue &amp; Ocupação</div>
+  <div class="tw" style="margin-top:10px"><table class="dktable">
+    <thead><tr><th>KPI</th><th>2025 Real</th><th>2026 Budget</th><th>2027</th><th>2031</th><th>Freq.</th></tr></thead>
     <tbody>
-      <tr class="dk-row"><td>Rev/Hóspede Restaurante</td><td>~€35</td><td>€44,46</td><td>€48+</td><td class="go">€55+</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>Revenue Spa mensal</td><td>~€43K</td><td>€50K</td><td>€65K</td><td class="go">€100K</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>ODD Revenue mensal</td><td>~€8K</td><td>€16K</td><td>€20K</td><td class="go">€50K</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>% Revenue F&B Externo</td><td>~5%</td><td>10%</td><td>18%</td><td class="go">35%</td><td>Mensal</td></tr>
-      <tr class="dk-row go"><td>TRevPAR</td><td>~€400</td><td>€440+</td><td>€460+</td><td>€600+</td><td>Mensal</td></tr>
-      <tr class="dk-row go"><td>% Hóspedes Recorrentes</td><td>~15%</td><td>18%+</td><td>22%</td><td>30%+</td><td>Trimestral</td></tr>
-      <tr class="dk-row"><td>NPS Global</td><td>—</td><td>72+</td><td>76+</td><td class="go">85+</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>Lead Time Médio (dias)</td><td>~45</td><td>55+</td><td>65+</td><td class="go">90+</td><td>Mensal</td></tr>
+      <tr class="go"><td>Revenue Total</td><td>€10.555.947</td><td>€11.941.356</td><td>€12.5–13M</td><td>€16M+</td><td>Semanal</td></tr>
+      <tr><td>ADR médio</td><td>€491,13</td><td>€490,08</td><td>€510+</td><td>€680+</td><td>Semanal</td></tr>
+      <tr><td>RevPAR</td><td>~€330</td><td>~€340</td><td>€375+</td><td>€500+</td><td>Semanal</td></tr>
+      <tr><td>TRevPAR</td><td>~€400</td><td>€440+</td><td>€460+</td><td>€600+</td><td>Mensal</td></tr>
+      <tr><td>Occ. mínima (pior mês)</td><td>~38%</td><td>45%+</td><td>55%+</td><td>70%+</td><td>Diário</td></tr>
+      <tr><td>% Hóspedes Recorrentes</td><td>~15%</td><td>18%+</td><td>22%</td><td>30%+</td><td>Trimestral</td></tr>
+      <tr><td>NPS Global</td><td>—</td><td>72+</td><td>76+</td><td>85+</td><td>Mensal</td></tr>
+      <tr><td>Rev/Hóspede Rest.</td><td>~€35</td><td>€44,46</td><td>€48+</td><td>€55+</td><td>Mensal</td></tr>
+      <tr><td>Occ. vs Comp Set (STR)</td><td>5.º de 5</td><td>5.º de 5</td><td>4.º de 5</td><td>2.º de 5</td><td>Mensal</td></tr>
     </tbody>
   </table></div>
-
-  <div class="sl" style="color:var(--gl);margin-top:24px">KPIs de Revenue &amp; Ocupação</div>
-  <div class="tw" style="margin-top:10px"><table>
-    <thead><tr><th style="background:var(--dk3);color:rgba(255,255,255,.3)">KPI</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2025 Real</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2026 Budget</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2027</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2028</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">2031</th><th style="background:var(--dk3);color:rgba(255,255,255,.3)">Freq.</th></tr></thead>
-    <tbody>
-      <tr class="dk-row bo" style="background:var(--dk3)"><td style="color:#fff">Revenue Total</td><td style="color:var(--gl)">€10.555.947</td><td style="color:var(--gl)">€11.941.356</td><td style="color:var(--gl)">€12.5–13M</td><td style="color:var(--gl)">€14–14.5M</td><td style="color:var(--g);font-weight:500">€16M+</td><td style="color:rgba(255,255,255,.3)">Semanal</td></tr>
-      <tr class="dk-row"><td>ADR médio</td><td>€491,13</td><td>€490,08</td><td>€510+</td><td>€545+</td><td class="go">€680+</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>RevPAR</td><td>~€330</td><td>~€340</td><td>€375+</td><td>€415+</td><td class="go">€500+</td><td>Semanal</td></tr>
-      <tr class="dk-row"><td>Occ. mínima (pior mês)</td><td>~38%</td><td>45%+</td><td>55%+</td><td>62%+</td><td class="go">70%+</td><td>Diário</td></tr>
-      <tr class="dk-row go"><td>ADR Residences Direto</td><td>€1.085</td><td>€1.056</td><td>€1.100</td><td>€1.150</td><td>€1.350+</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>Occ. vs Comp Set (STR)</td><td>5.º de 5</td><td>5.º de 5</td><td>4.º de 5</td><td>3.º de 5</td><td class="go">2.º de 5</td><td>Mensal</td></tr>
-      <tr class="dk-row"><td>Forbes Travel Guide</td><td>—</td><td>Auditoria</td><td>Candidatura</td><td class="go">★ Obtida</td><td>★★ Target</td><td>Anual</td></tr>
-    </tbody>
-  </table></div>
-
-  <div class="dins" style="margin-top:16px"><div class="inh">Cadência de revisão da taskforce de marketing</div><ul class="inl">
-    <li>Daily Revenue Huddle (15 min): GM + Revenue Mgmt + Front Office · occ actual, ADR do dia, OTB semana, decisão de pricing</li>
-    <li>Weekly Marketing Review (45 min): GM + Marketing · ROAS semanal, pacing budget, conversão booking engine, emails convertidos, OTB por canal</li>
-    <li>Monthly Full Review (90 min): Todas as chefias · Revenue vs Budget por departamento, TRevPAR, Rev/hóspede por outlet, NPS, headcount, próximas campanhas</li>
-    <li>Quarterly Strategic Review (3h): Direcção + Marketing · KPIs anuais, mercados, posicionamento, decisões de investimento para o trimestre seguinte</li>
+  <div class="dins" style="margin-top:16px"><div class="inh">Cadência de revisão</div><ul class="inl">
+    <li>Daily Revenue Huddle (15 min) — GM + Revenue + FO: occ actual, ADR do dia, OTB semana, decisão de pricing</li>
+    <li>Weekly Marketing Review (45 min) — GM + Marketing: ROAS, pacing budget, conv. booking engine, OTB por canal, Google Ads performance</li>
+    <li>Monthly Full Review (90 min) — Todas as chefias: Revenue vs Budget por departamento, TRevPAR, Rev/hóspede por outlet, NPS, headcount</li>
+    <li>Quarterly Strategic Review (3h) — Direcção + Marketing: KPIs anuais, mercados, posicionamento, investimento próximo trimestre</li>
   </ul></div>
 </div>
 </div>
 
-</div><!-- end #app -->
+</div><!-- #app -->
 
 <script>
-// LOADER
+/* ─── LOADER ─────────────────────────────────────────────────────────────── */
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('ld').classList.add('out');
     setTimeout(() => document.getElementById('ld').style.display = 'none', 700);
-    initAnim();
-  }, 2300);
+    animateVisible();
+  }, 2200);
 });
 
-// PAGE NAVIGATION — data-page attribute, no inline onclick
+/* ─── NAV SCROLL BEHAVIOUR ───────────────────────────────────────────────── */
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 20) {
+    nav.classList.add('solid');
+  } else {
+    nav.classList.remove('solid');
+  }
+  lastScroll = y;
+}, { passive: true });
+
+/* ─── HAMBURGER ──────────────────────────────────────────────────────────── */
+const hamBtn = document.getElementById('hamBtn');
+const drawer = document.getElementById('drawer');
+hamBtn.addEventListener('click', () => {
+  const open = hamBtn.classList.toggle('open');
+  drawer.classList.toggle('open', open);
+});
+
+/* ─── PAGE NAVIGATION (data-page) ─────────────────────────────────────────── */
+function showPage(id, btn) {
+  document.querySelectorAll('.pg').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('[data-page]').forEach(b => b.classList.remove('on'));
+  const page = document.getElementById('p-' + id);
+  if (page) page.classList.add('on');
+  document.querySelectorAll(`[data-page="${id}"]`).forEach(b => b.classList.add('on'));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Close drawer on mobile
+  hamBtn.classList.remove('open');
+  drawer.classList.remove('open');
+  setTimeout(animateVisible, 120);
+}
+
 document.querySelectorAll('[data-page]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.dataset.page;
-    document.querySelectorAll('.pg').forEach(p => p.classList.remove('on'));
-    document.querySelectorAll('[data-page]').forEach(b => b.classList.remove('on'));
-    const page = document.getElementById('p-' + id);
-    if (page) page.classList.add('on');
-    document.querySelectorAll(`[data-page="${id}"]`).forEach(b => b.classList.add('on'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(initAnim, 150);
-  });
+  btn.addEventListener('click', () => showPage(btn.dataset.page, btn));
 });
 
-// TABS — data-tab attribute
+/* ─── TABS (data-tab) ────────────────────────────────────────────────────── */
 document.querySelectorAll('[data-tab]').forEach(btn => {
   btn.addEventListener('click', () => {
     const id = btn.dataset.tab;
-    const parent = btn.closest('.tabs').parentElement;
+    const tabsEl = btn.closest('.tabs');
+    const parent = tabsEl ? tabsEl.parentElement : null;
+    if (!parent) return;
     parent.querySelectorAll('.tp').forEach(p => p.classList.remove('on'));
-    btn.closest('.tabs').querySelectorAll('[data-tab]').forEach(b => b.classList.remove('on'));
+    tabsEl.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('on'));
     const panel = document.getElementById(id);
     if (panel) panel.classList.add('on');
     btn.classList.add('on');
-    setTimeout(initAnim, 100);
+    setTimeout(animateVisible, 80);
   });
 });
 
-// YEAR PHASES — data-yr attribute
+/* ─── YEAR PHASES (data-yr) ─────────────────────────────────────────────── */
 document.querySelectorAll('[data-yr]').forEach(btn => {
   btn.addEventListener('click', () => {
     const id = btn.dataset.yr;
@@ -1116,9 +1052,9 @@ document.querySelectorAll('[data-yr]').forEach(btn => {
   });
 });
 
-// ANIMATE BARS
-function initAnim() {
-  document.querySelectorAll('.bar-f, .dbar-f, .rf').forEach(b => {
+/* ─── ANIMATE BARS ───────────────────────────────────────────────────────── */
+function animBars() {
+  document.querySelectorAll('.rf').forEach(b => {
     const w = b.style.width;
     if (!w || w === '0%') return;
     b.style.transition = 'none';
@@ -1128,13 +1064,21 @@ function initAnim() {
       b.style.width = w;
     }));
   });
-  // Stagger fade-in
-  document.querySelectorAll('.kc, .cal, .ai, .ti, .oc, .sc, .bc, .gi').forEach((el, i) => {
-    if (el.style.opacity === '1') return;
+}
+
+/* ─── FADE-IN ON VISIBLE ─────────────────────────────────────────────────── */
+function animateVisible() {
+  animBars();
+  document.querySelectorAll('.kc,.kdc,.cal,.ai,.ti,.oc,.sc,.bc,.gi').forEach((el, i) => {
+    if (el.dataset.animated) return;
     el.style.opacity = '0';
-    el.style.transform = 'translateY(10px)';
-    el.style.transition = `opacity .35s ease ${(i % 8) * 0.05}s, transform .35s ease ${(i % 8) * 0.05}s`;
-    setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50 + (i % 8) * 50);
+    el.style.transform = 'translateY(8px)';
+    el.style.transition = `opacity .3s ease ${(i % 8) * 0.045}s, transform .3s ease ${(i % 8) * 0.045}s`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      el.dataset.animated = '1';
+    }, 40 + (i % 8) * 45);
   });
 }
 </script>
